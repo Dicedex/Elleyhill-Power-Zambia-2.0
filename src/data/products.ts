@@ -109,7 +109,7 @@ export type Product = {
         name: "KAPA Energie Q300 Portable Power Station",
         slug: "kapa-energie-q300-portable-power-station",
         category: "Portable",
-        description: "Compact and lightweight power station for camping, and emergencies. Not for heating appliances.",
+        description: "Compact and lightweight power station for camping and emergencies. Not suitable for heating appliances.",
         price: "K 4,303.43",
         features: [
             "300W Pure Sine Wave Inverter",
@@ -139,7 +139,25 @@ export type Product = {
       category: "Portable",
       description: "A versatile and powerful portable power station for all your outdoor adventures.",
       price: "K 7,620.66",
-      features: ["600W Output", "AC/DC/USB Ports", "LCD Display", "Fast Recharging"],
+      features: [
+        "600W Pure Sine Wave Inverter",
+        "Multiple Output Ports (AC, DC, USB)",
+        "Fast Solar Charging (200W Max)",
+        "Clear LCD Display",
+        "Portable and Durable Design"
+      ],
+      specifications: [
+        { label: "Rated Capacity", value: "607Wh" },
+        { label: "AC Output", value: "2x Outlets (600W, 1200W Surge)" },
+        { label: "USB-A Output", value: "3x Ports (5V 2.4A)" },
+        { label: "USB-C Output", value: "1x Port (PD 60W max)" },
+        { label: "Car Port Output", value: "12V (9V-12.6V, 10A max)" },
+        { label: "AC Input", value: "80W" },
+        { label: "Solar/DC Input", value: "DC (8mm) 10-30V / 200W Max / 10A Max" },
+        { label: "Size", value: "200 x 200 x 250 mm" },
+        { label: "Weight", value: "10.5 kg" },
+      ],
+      whatsInTheBox: ["1x KAPA Energie Q600", "1x AC Charging Cord", "1x MC4 Solar Adapter", "1x User Manual"],
       image: "/images/products/Q600.png",
       aiHint: "portable power"
     },
