@@ -190,7 +190,7 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
           </div>
         </div>
 
-        {product.slug === 'greenrich-up5000-lithium-battery' && (
+        {(product.slug === 'greenrich-up5000-lithium-battery' || product.slug === 'greenrich-wm5000-wall-mounting-lithium-battery') && (
             <div className="mt-16 md:mt-24">
                 <div className="text-center mb-12">
                     <h2 className="font-headline text-3xl md:text-4xl font-bold">Key Specifications</h2>
