@@ -6,7 +6,7 @@ import { PRODUCTS } from "@/data/products";
 import { SiteLayout } from "@/components/layout";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle, Package, ShieldCheck, FileText, Smartphone, Lightbulb, Wifi, Laptop, Tv2, Refrigerator, ListTree, Coffee, Wrench } from "lucide-react";
+import { ArrowRight, CheckCircle, Package, ShieldCheck, FileText, Smartphone, Lightbulb, Wifi, Laptop, Tv2, Refrigerator, ListTree, Coffee, Wrench, Zap, TrendingUp, Box } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Accordion,
@@ -190,6 +190,40 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
           </div>
         </div>
 
+        {product.slug === 'greenrich-up5000-lithium-battery' && (
+            <div className="mt-16 md:mt-24">
+                <div className="text-center mb-12">
+                    <h2 className="font-headline text-3xl md:text-4xl font-bold">Key Specifications</h2>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
+                    <Card className="flex flex-col items-center justify-center p-6">
+                        <div className="p-4 bg-primary/10 rounded-full mb-4">
+                            <Zap className="h-10 w-10 text-primary" />
+                        </div>
+                        <h3 className="font-bold text-xl mb-1">Power</h3>
+                        <p className="text-2xl font-headline text-primary">7500W</p>
+                        <p className="text-sm text-muted-foreground">Peak Discharge</p>
+                    </Card>
+                    <Card className="flex flex-col items-center justify-center p-6">
+                         <div className="p-4 bg-primary/10 rounded-full mb-4">
+                            <TrendingUp className="h-10 w-10 text-primary" />
+                        </div>
+                        <h3 className="font-bold text-xl mb-1">Discharging Rate</h3>
+                        <p className="text-2xl font-headline text-primary">1.5C</p>
+                        <p className="text-sm text-muted-foreground">Max Continuous</p>
+                    </Card>
+                    <Card className="flex flex-col items-center justify-center p-6">
+                         <div className="p-4 bg-primary/10 rounded-full mb-4">
+                            <Box className="h-10 w-10 text-primary" />
+                        </div>
+                        <h3 className="font-bold text-xl mb-1">Capacity</h3>
+                        <p className="text-2xl font-headline text-primary">4.95kWh</p>
+                         <p className="text-sm text-muted-foreground">Nominal</p>
+                    </Card>
+                </div>
+            </div>
+        )}
+
         {product.slug === 'kapa-energie-q300-portable-power-station' && (
             <div className="mt-16 md:mt-24">
                 <div className="text-center mb-12">
@@ -241,7 +275,7 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
         )}
 
         {product.slug === 'kapa-energie-q2400-portable-power-station' && (
-            <div className="mt-16 md:mt-24">
+             <div className="mt-16 md:mt-24">
                 <div className="text-center mb-12">
                     <h2 className="font-headline text-3xl md:text-4xl font-bold">What Can It Power?</h2>
                     <p className="max-w-2xl mx-auto mt-4 text-lg text-muted-foreground">
@@ -267,7 +301,3 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
     </SiteLayout>
   );
 }
-
-    
-
-    
