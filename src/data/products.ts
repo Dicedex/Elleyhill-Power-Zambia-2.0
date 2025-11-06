@@ -118,7 +118,7 @@ export type Product = {
         { label: "Storage Temperature", value: "-15°C - 60°C" },
       ],
       whatsInTheBox: ["1 x Growatt SPF5000 Inverter", "1 x User Manual & Installation Guide", "Wi-Fi Dongle"],
-      warranty: "5-Year Standard Manufacturer Warranty.",
+      warranty: "1-Year Standard Manufacturer Warranty.",
       image: "/images/products/growatt.png",
       aiHint: "power inverter"
     },
@@ -495,3 +495,5 @@ aiHint: "electrical fuse"
     }
   ];
   
+
+    
