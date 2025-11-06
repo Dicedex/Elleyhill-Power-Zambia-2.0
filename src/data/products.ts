@@ -157,7 +157,7 @@ export type Product = {
         { label: "Size", value: "200 x 200 x 250 mm" },
         { label: "Weight", value: "10.5 kg" },
       ],
-      whatsInTheBox: ["1x KAPA Energie Q600", "1x AC Charging Cord", "1x MC4 Solar Adapter", "1x User Manual"],
+      whatsInTheBox: ["1x KAPA Energie Q600", "AC charging cord", "1x User Manual", "MC4 adapter"],
       image: "/images/products/Q600.png",
       aiHint: "portable power"
     },
@@ -177,7 +177,17 @@ export type Product = {
       category: "Portable",
       description: "A reliable lithium-based portable power solution with a built-in inverter.",
       price: "K 15,689.59",
-      features: ["1000W Inverter", "Lithium Battery", "Compact Design", "Solar Compatible"],
+      features: [
+        "All-in-one solution with integrated inverter and battery",
+        "Max 1500 cycles lithium battery with a 5-year service life",
+        "Can be activated by mains or solar",
+        "AVR mains input, battery charging, and UPS function",
+        "Convenient 5VDC-USB and 12VDC output ports",
+        "MPPT Controller for >15-20% improved charging efficiency",
+        "Overcharge and discharge protection for longer battery life",
+        "Safe and reliable with intelligent exhaust fan control",
+        "Overall automatic protection and alarms (AC overload, short circuit, etc.)"
+      ],
       image: "/images/products/Kapa+Li.png",
       aiHint: "power station"
     },
