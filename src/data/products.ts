@@ -226,6 +226,7 @@ export type Product = {
         { label: "Package Size: W*D*H (mm)", value: "512 x 310 x 405mm" },
         { label: "Gross Weight", value: "23kg" },
       ],
+      whatsInTheBox: ["AC charging cord", "1x User Manual", "MC4 adapter"],
       image: "/images/products/Kapa+Li.png",
       aiHint: "power station"
     },
@@ -431,3 +432,5 @@ aiHint: "electrical fuse"
     }
   ];
   
+
+    
