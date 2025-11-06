@@ -6,7 +6,7 @@ import { PRODUCTS } from "@/data/products";
 import { SiteLayout } from "@/components/layout";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle, Package, ShieldCheck, FileText, Smartphone, Lightbulb, Wifi, Laptop, Tv2, Refrigerator } from "lucide-react";
+import { ArrowRight, CheckCircle, Package, ShieldCheck, FileText, Smartphone, Lightbulb, Wifi, Laptop, Tv2, Refrigerator, ListTree } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Accordion,
@@ -97,6 +97,25 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
                   </AccordionTrigger>
                   <AccordionContent className="prose prose-sm max-w-none text-muted-foreground">
                     {product.longDescription}
+                  </AccordionContent>
+                </AccordionItem>
+              )}
+               {product.specifications && product.specifications.length > 0 && (
+                <AccordionItem value="specifications">
+                  <AccordionTrigger>
+                    <div className="flex items-center gap-2 font-semibold">
+                      <ListTree className="h-5 w-5" /> Specifications
+                    </div>
+                  </AccordionTrigger>
+                  <AccordionContent>
+                     <ul className="space-y-2 text-muted-foreground">
+                        {product.specifications.map((spec, index) => (
+                            <li key={index} className="flex justify-between text-sm">
+                                <span>{spec.label}:</span>
+                                <span className="font-medium text-foreground">{spec.value}</span>
+                            </li>
+                        ))}
+                    </ul>
                   </AccordionContent>
                 </AccordionItem>
               )}

@@ -7,6 +7,7 @@ export type Product = {
     longDescription?: string;
     price: string;
     features: string[];
+    specifications?: { label: string; value: string }[];
     whatsInTheBox?: string[];
     warranty?: string;
     image: string;
@@ -105,15 +106,32 @@ export type Product = {
       aiHint: "large inverter"
     },
     {
-      name: "KAPA Energie Q300 Portable Power Station",
-      slug: "kapa-energie-q300-portable-power-station",
-      category: "Portable",
-      description: "Compact and lightweight power station for camping, and emergencies.",
-      price: "K 4,303.43",
-      features: ["313.17Wh Rated Capacity", "300W Pure Sine Wave Inverter", "3x USB-A ports", "1x USB-C PD 60W Port", "2x AC outlets", "12V Car Port", "LCD Display", "4kg Weight"],
-      whatsInTheBox: ["1x KAPA Energie Q300", "1x AC/DC Home Charger", "1x User Manual"],
-      image: "/images/products/Q300.png",
-      aiHint: "portable power"
+        name: "KAPA Energie Q300 Portable Power Station",
+        slug: "kapa-energie-q300-portable-power-station",
+        category: "Portable",
+        description: "Compact and lightweight power station for camping, and emergencies.",
+        price: "K 4,303.43",
+        features: [
+            "Multiple Charging Options (AC, Solar, Car)",
+            "Lightweight & Compact Design",
+            "Informative LCD Display",
+            "Built-in Safety Protections",
+        ],
+        specifications: [
+            { label: "Rated Capacity", value: "313.17Wh" },
+            { label: "Inverter", value: "300W Pure Sine Wave" },
+            { label: "AC Output", value: "2x Outlets" },
+            { label: "USB-A Output", value: "3x Ports (5V 2.4A)" },
+            { label: "USB-C Output", value: "1x Port (PD 60W max)" },
+            { label: "Car Port Output", value: "12V (9V-12.6V, 10A max)" },
+            { label: "AC Input", value: "Via AC/DC Adapter (230VAC, 36W)" },
+            { label: "Solar/DC Input", value: "DC (5.5mm) 5V-24V/2A, USB-C max 60W" },
+            { label: "Size", value: "145 x 212 x 215 mm" },
+            { label: "Weight", value: "4 kg" },
+        ],
+        whatsInTheBox: ["1x KAPA Energie Q300", "1x AC/DC Home Charger", "1x User Manual"],
+        image: "/images/products/Q300.png",
+        aiHint: "portable power"
     },
     {
       name: "KAPA Energie Q600 Portable Power Station",
