@@ -87,6 +87,18 @@ export type Product = {
         "Optional WIFI/GPRS remote monitoring",
         "Parallel for scalability"
       ],
+      specifications: [
+        { label: "BATTERY", value: "" },
+        { label: "Battery Voltage", value: "48VDC" },
+        { label: "INVERTER OUTPUT", value: "" },
+        { label: "Rated Power", value: "5000VA / 5000W" },
+        { label: "Parallel Capability", value: "Yes, 6 units" },
+        { label: "AC Voltage Regulation (Battery Mode)", value: "230VAC ± 5% @ 50/60Hz" },
+        { label: "Surge Power", value: "10000VA" },
+        { label: "Efficiency (Peak)", value: "93%" },
+        { label: "Waveform", value: "Pure sine wave" },
+        { label: "Transfer Time", value: "10ms (PC); 20ms (Appliances)" },
+      ],
       whatsInTheBox: ["1 x Growatt SPF5000 Inverter", "1 x User Manual & Installation Guide", "Wi-Fi Dongle (optional)"],
       warranty: "5-Year Standard Manufacturer Warranty.",
       image: "/images/products/growatt.png",
@@ -464,5 +476,3 @@ aiHint: "electrical fuse"
     }
   ];
   
-
-    
