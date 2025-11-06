@@ -125,9 +125,10 @@ export type Product = {
             { label: "AC Output", value: "2x Outlets (300W Total)" },
             { label: "USB-A Output", value: "3x Ports (5V 2.4A)" },
             { label: "USB-C Output", value: "1x Port (PD 60W max)" },
-            { label: "Car Port Output", value: "12V (9V-12.6V, 10A max)" },
-            { label: "AC Input", value: "Via AC/DC Adapter (230VAC, 36W)" },
-            { label: "Solar/DC Input", value: "DC (5.5mm) 5V-24V/2A or USB-C (60W max)" },
+            { label: "Car Port", value: "12V (9V-12.6V, 10A max)" },
+            { label: "DC Input Port", value: "DC (5.5mm) 5V-24V/2A or USB-C (60W max)" },
+            { label: "AC Input Port", value: "Via AC/DC Adapter (230VAC, 36W)" },
+            { label: "LCD", value: "Yes" },
             { label: "Size", value: "145 x 212 x 215 mm" },
             { label: "Weight", value: "4 kg" },
         ],
@@ -139,14 +140,15 @@ export type Product = {
       name: "KAPA Energie Q600 Portable Power Station",
       slug: "kapa-energie-q600-portable-power-station",
       category: "Portable",
-      description: "A versatile and powerful portable power station for all your outdoor adventures.",
+      description: "A versatile and powerful portable power station for all your outdoor adventures. Not suitable for heating appliances.",
       price: "K 7,620.66",
       features: [
         "600W Pure Sine Wave Inverter",
         "Multiple Output Ports (AC, DC, USB)",
         "Fast Solar Charging (200W Max)",
         "Clear LCD Display",
-        "Portable and Durable Design"
+        "Portable and Durable Design",
+        "Not suitable for heating appliances"
       ],
       specifications: [
         { label: "Rated Capacity", value: "607Wh" },
@@ -154,13 +156,14 @@ export type Product = {
         { label: "AC Output", value: "2x Outlets (600W, 1200W Surge)" },
         { label: "USB-A Output", value: "3x Ports (5V 2.4A)" },
         { label: "USB-C Output", value: "1x Port (PD 60W max)" },
-        { label: "Car Port Output", value: "12V (9V-12.6V, 10A max)" },
-        { label: "AC Input", value: "80W" },
-        { label: "Solar/DC Input", value: "DC (8mm) 10-30V / 200W Max / 10A Max" },
+        { label: "Car Port", value: "12V (9V-12.6V, 10A max)" },
+        { label: "DC Input Port", value: "DC (8mm) 10-30V / 200W Max / 10A Max" },
+        { label: "AC Input Port", value: "80W" },
+        { label: "LCD", value: "Yes" },
         { label: "Size", value: "200 x 200 x 250 mm" },
         { label: "Weight", value: "10.5 kg" },
       ],
-      whatsInTheBox: ["1x KAPA Energie Q600", "AC charging cord", "1x User Manual", "MC4 adapter"],
+      whatsInTheBox: ["AC charging cord", "1x User Manual", "MC4 adapter"],
       image: "/images/products/Q600.png",
       aiHint: "portable power"
     },
@@ -189,7 +192,8 @@ export type Product = {
         "MPPT Controller for >15-20% improved charging efficiency",
         "Overcharge and discharge protection for longer battery life",
         "Safe and reliable with intelligent exhaust fan control",
-        "Overall automatic protection and alarms (AC overload, short circuit, etc.)"
+        "Overall automatic protection and alarms (AC overload, short circuit, etc.)",
+        "Not suitable for heating appliances"
       ],
       specifications: [
         { label: "Battery Type", value: "Lithium" },
@@ -211,13 +215,12 @@ export type Product = {
         { label: "12VDC Output Ports", value: "2 PCS MAX 2A" },
         { label: "Protection Grade", value: "IP21" },
         { label: "Display", value: "LCD+LED" },
-        { label: "Battery Activation", value: "Mains or Solar Input" },
+        { label: "Battery Activation", value: "Mains Input or Solar Input" },
         { label: "External Size (W*D*H)", value: "430 x 230 x 330mm" },
         { label: "Package Size (W*D*H)", value: "512 x 310 x 405mm" },
         { label: "Gross Weight", value: "23kg" },
         { label: "Capacity", value: "1295WH" },
         { label: "Battery Life", value: "1500 Cycles" },
-        { label: "Appliances", value: "No Heating Appliances" },
       ],
       image: "/images/products/Kapa+Li.png",
       aiHint: "power station"
@@ -320,7 +323,7 @@ export type Product = {
       price: "K 169.60",
       features: ["160A Current Rating", "High-quality construction", "Protects against overcurrents", "Essential for system safety"],
       image: "/images/products/fuse.png",
-      aiHint: "electrical fuse"
+aiHint: "electrical fuse"
     },
     {
       name: "IBR / CORR / HARVEY - 4P - MOUNTING STRUCTURE",

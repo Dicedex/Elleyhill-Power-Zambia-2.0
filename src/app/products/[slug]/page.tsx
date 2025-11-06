@@ -203,6 +203,7 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
                 </div>
                  <div className="text-center text-xs text-muted-foreground mt-4 space-y-1">
                     <p>*Based on average device consumption. **Runtimes are estimates and may vary.</p>
+                    <p className="font-medium text-destructive">Not suitable for heating appliances like kettles, stoves, or hair dryers.</p>
                 </div>
             </div>
         )}
