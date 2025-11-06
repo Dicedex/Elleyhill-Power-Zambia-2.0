@@ -21,6 +21,11 @@ function ProductsContent() {
   const categoryParam = searchParams.get('category');
   
   const [selectedCategory, setSelectedCategory] = useState(categoryParam || "All");
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   useEffect(() => {
     setSelectedCategory(categoryParam || "All");
@@ -29,6 +34,10 @@ function ProductsContent() {
   const filteredProducts = selectedCategory === "All" 
     ? PRODUCTS 
     : PRODUCTS.filter((product) => product.category === selectedCategory);
+
+  if (!isClient) {
+    return <ProductsSkeleton />;
+  }
 
   return (
     <>
