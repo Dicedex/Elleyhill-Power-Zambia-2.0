@@ -79,7 +79,14 @@ export type Product = {
       category: "Inverters",
       description: "A reliable 5kW off-grid inverter from Growatt, known for its robust performance.",
       price: "K 10,600.00",
-      features: ["5kW Power Output", "48V System", "High PV input voltage", "Built-in MPPT controller", "Parallel capability up to 6 units"],
+      features: [
+        "Integrated MPPT charge controller",
+        "Can work with or without a battery",
+        "Maximum PV input voltage up to 450VDC",
+        "Configurable grid or solar input priority",
+        "Optional WIFI/GPRS remote monitoring",
+        "Parallel for scalability"
+      ],
       whatsInTheBox: ["1 x Growatt SPF5000 Inverter", "1 x User Manual & Installation Guide", "Wi-Fi Dongle (optional)"],
       warranty: "5-Year Standard Manufacturer Warranty.",
       image: "/images/products/growatt.png",
