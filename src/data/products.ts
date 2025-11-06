@@ -110,7 +110,8 @@ export type Product = {
       category: "Portable",
       description: "Compact and lightweight power station for camping, and emergencies.",
       price: "K 4,303.43",
-      features: ["300W Output", "Multiple Charging Ports", "Solar Charging Ready", "Easy to carry"],
+      features: ["313.17Wh Rated Capacity", "300W Pure Sine Wave Inverter", "3x USB-A ports", "1x USB-C PD 60W Port", "2x AC outlets", "12V Car Port", "LCD Display", "4kg Weight"],
+      whatsInTheBox: ["1x KAPA Energie Q300", "1x AC/DC Home Charger", "1x User Manual"],
       image: "/images/products/Q300.png",
       aiHint: "portable power"
     },
