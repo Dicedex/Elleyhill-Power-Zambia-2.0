@@ -223,6 +223,40 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
                 </div>
             </div>
         )}
+        
+        {product.slug === 'greenrich-up6100-lithium-battery' && (
+            <div className="mt-16 md:mt-24">
+                <div className="text-center mb-12">
+                    <h2 className="font-headline text-3xl md:text-4xl font-bold">Key Specifications</h2>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
+                    <Card className="flex flex-col items-center justify-center p-6">
+                        <div className="p-4 bg-primary/10 rounded-full mb-4">
+                            <Zap className="h-10 w-10 text-primary" />
+                        </div>
+                        <h3 className="font-bold text-xl mb-1">Power</h3>
+                        <p className="text-2xl font-headline text-primary">9000W</p>
+                        <p className="text-sm text-muted-foreground">Peak Discharge</p>
+                    </Card>
+                    <Card className="flex flex-col items-center justify-center p-6">
+                         <div className="p-4 bg-primary/10 rounded-full mb-4">
+                            <TrendingUp className="h-10 w-10 text-primary" />
+                        </div>
+                        <h3 className="font-bold text-xl mb-1">Discharging Rate</h3>
+                        <p className="text-2xl font-headline text-primary">1.5C</p>
+                        <p className="text-sm text-muted-foreground">Max Continuous</p>
+                    </Card>
+                    <Card className="flex flex-col items-center justify-center p-6">
+                         <div className="p-4 bg-primary/10 rounded-full mb-4">
+                            <Box className="h-10 w-10 text-primary" />
+                        </div>
+                        <h3 className="font-bold text-xl mb-1">Capacity</h3>
+                        <p className="text-2xl font-headline text-primary">6123Wh</p>
+                         <p className="text-sm text-muted-foreground">Nominal</p>
+                    </Card>
+                </div>
+            </div>
+        )}
 
         {product.slug === 'kapa-energie-q300-portable-power-station' && (
             <div className="mt-16 md:mt-24">
