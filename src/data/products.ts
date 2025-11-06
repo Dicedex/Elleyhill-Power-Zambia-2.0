@@ -290,7 +290,7 @@ export type Product = {
         { label: "Rated output voltage", value: "1/N/PE, 220 V/ 230V" },
         { label: "Rated frequency", value: "50Hz/ 60Hz" },
         { label: "Rated output current", value: "27.3A/ 26.1A" },
-        { label: "Max. output current", value: "30A" },
+        { label: "Max. output current", value: "40A" },
         { label: "THDv (@linear load)", value: "<2%" },
         { label: "INPUT AC (GRID SIDE)", value: "" },
         { label: "Input voltage range", value: "187-253 V" },
@@ -320,6 +320,7 @@ export type Product = {
         { label: "Display", value: "LED + APP" },
         { label: "Communication", value: "RS485, CAN, Optional: WI-FI, GPRS, LAN" }
       ],
+      whatsInTheBox: ["1 x Greenrich 6kW Inverter", "User Manual", "Wi-Fi/Communication Dongle"],
       image: "/images/products/Greenrich inverter.jpg",
       aiHint: "hybrid inverter"
     },
@@ -393,6 +394,7 @@ export type Product = {
         { label: "Display", value: "LED + APP" },
         { label: "Communication", value: "RS485, CAN, Optional: WI-FI, GPRS, LAN" }
       ],
+      whatsInTheBox: ["1 x Greenrich 8kW Inverter", "User Manual", "Wi-Fi/Communication Dongle"],
       image: "/images/products/Greenrich inverter.jpg",
       aiHint: "large inverter"
     },
@@ -746,6 +748,7 @@ aiHint: "electrical fuse"
 
 
     
+
 
 
 
