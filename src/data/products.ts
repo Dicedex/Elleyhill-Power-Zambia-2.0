@@ -80,7 +80,7 @@ export type Product = {
       name: "Greenrich WM5000 Wall Mounting Lithium Battery",
       slug: "greenrich-wm5000-wall-mounting-lithium-battery",
       category: "Batteries",
-      description: "A space-saving wall-mountable 5kWh lithium battery. Sleek design and powerful performance.",
+      description: "A space-saving wall-mountable 5kWh lithium battery for residential & business battery storage. Sleek design and powerful performance.",
       price: "K 20,606.00",
       features: ["4.8kWh Nominal Energy", "Wall-Mount Design", "Integrated BMS", "Parallel Connection up to 16 units"],
       whatsInTheBox: ["1 x Greenrich WM5000 Battery", "1 x Wall mounting bracket", "Communication Cables", "User Manual"],
