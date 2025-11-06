@@ -47,6 +47,20 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
     notFound();
   }
 
+  // Helper to group specifications by category (the empty value entries)
+  const groupedSpecifications = product.specifications?.reduce((acc, spec) => {
+    if (spec.value === "") {
+      acc.push({ category: spec.label, items: [] });
+    } else {
+      if (acc.length === 0) {
+        acc.push({ category: "General", items: [] });
+      }
+      acc[acc.length - 1].items.push(spec);
+    }
+    return acc;
+  }, [] as { category: string; items: { label: string; value: string }[] });
+
+
   return (
     <SiteLayout>
       <div className="container py-16 md:py-24">
@@ -109,7 +123,7 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
                   </AccordionContent>
                 </AccordionItem>
               )}
-               {product.specifications && product.specifications.length > 0 && (
+               {groupedSpecifications && groupedSpecifications.length > 0 && (
                 <AccordionItem value="specifications">
                   <AccordionTrigger>
                     <div className="flex items-center gap-2 font-semibold">
@@ -117,14 +131,21 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
                     </div>
                   </AccordionTrigger>
                   <AccordionContent>
-                     <ul className="space-y-2 text-muted-foreground">
-                        {product.specifications.map((spec, index) => (
-                            <li key={index} className="flex justify-between text-sm">
-                                <span>{spec.label}:</span>
-                                <span className="font-medium text-foreground">{spec.value}</span>
-                            </li>
-                        ))}
-                    </ul>
+                    <div className="space-y-4">
+                      {groupedSpecifications.map((group, index) => (
+                        <div key={index}>
+                          {group.category !== "General" && <h4 className="font-semibold mb-2">{group.category}</h4>}
+                          <ul className="space-y-2 text-muted-foreground">
+                            {group.items.map((spec, specIndex) => (
+                                <li key={specIndex} className="flex justify-between text-sm">
+                                    <span>{spec.label}:</span>
+                                    <span className="font-medium text-foreground">{spec.value}</span>
+                                </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
                   </AccordionContent>
                 </AccordionItem>
               )}
