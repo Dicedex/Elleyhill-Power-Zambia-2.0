@@ -6,7 +6,7 @@ import { PRODUCTS } from "@/data/products";
 import { SiteLayout } from "@/components/layout";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle, Package, ShieldCheck, FileText, Smartphone, Lightbulb, Wifi, Laptop, Tv2, Refrigerator, ListTree } from "lucide-react";
+import { ArrowRight, CheckCircle, Package, ShieldCheck, FileText, Smartphone, Lightbulb, Wifi, Laptop, Tv2, Refrigerator, ListTree, Coffee, Wrench } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Accordion,
@@ -37,6 +37,17 @@ const poweredAppliancesQ600 = [
     { icon: <Laptop className="h-8 w-8 text-primary" />, name: "Laptop Charger", power: "50W", duration: "12 Charges*" },
     { icon: <Tv2 className="h-8 w-8 text-primary" />, name: "Television", power: "50W", duration: "12 Hours**" },
     { icon: <Refrigerator className="h-8 w-8 text-primary" />, name: "Refrigerator", power: "50W", duration: "12 Hours**" },
+];
+
+const poweredAppliancesQ2400 = [
+    { icon: <Smartphone className="h-8 w-8 text-primary" />, name: "Phone Charger", power: "5W", duration: "480 Charges*" },
+    { icon: <Lightbulb className="h-8 w-8 text-primary" />, name: "LED Light", power: "10W", duration: "240 Hours**" },
+    { icon: <Wifi className="h-8 w-8 text-primary" />, name: "WiFi Router", power: "10W", duration: "240 Hours**" },
+    { icon: <Laptop className="h-8 w-8 text-primary" />, name: "Laptop Charger", power: "50W", duration: "48 Charges*" },
+    { icon: <Tv2 className="h-8 w-8 text-primary" />, name: "Television", power: "50W", duration: "48 Hours**" },
+    { icon: <Refrigerator className="h-8 w-8 text-primary" />, name: "Refrigerator", power: "50W", duration: "48 Hours**" },
+    { icon: <Coffee className="h-8 w-8 text-primary" />, name: "Coffee Machine", power: "1400W", duration: "1.5 Hours**" },
+    { icon: <Wrench className="h-8 w-8 text-primary" />, name: "Electric Drill", power: "900W", duration: "2.5 Hours**" },
 ];
 
 
@@ -228,7 +239,33 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
                 </div>
             </div>
         )}
+
+        {product.slug === 'kapa-energie-q2400-portable-power-station' && (
+            <div className="mt-16 md:mt-24">
+                <div className="text-center mb-12">
+                    <h2 className="font-headline text-3xl md:text-4xl font-bold">What Can It Power?</h2>
+                    <p className="max-w-2xl mx-auto mt-4 text-lg text-muted-foreground">
+                        The KAPA Q2400 can handle even more demanding appliances. Here are a few examples:
+                    </p>
+                </div>
+                <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-4 md:gap-6 text-center">
+                    {poweredAppliancesQ2400.map((app, index) => (
+                        <Card key={index} className="flex flex-col items-center justify-center p-4">
+                            <div className="mb-3">{app.icon}</div>
+                            <p className="font-semibold">{app.name}</p>
+                            <p className="text-sm text-muted-foreground">{app.power}</p>
+                            <p className="text-xs font-bold text-primary">{app.duration}</p>
+                        </Card>
+                    ))}
+                </div>
+                 <div className="text-center text-xs text-muted-foreground mt-4 space-y-1">
+                    <p>*Based on average device consumption. **Runtimes are estimates and may vary.</p>
+                </div>
+            </div>
+        )}
       </div>
     </SiteLayout>
   );
 }
+
+    
