@@ -83,6 +83,33 @@ export type Product = {
       description: "A space-saving wall-mountable 5kWh lithium battery for residential & business battery storage. Sleek design and powerful performance.",
       price: "K 20,606.00",
       features: ["4.8kWh Nominal Energy", "Wall-Mount Design", "Integrated BMS", "Parallel Connection up to 16 units"],
+      specifications: [
+        { label: "BASIC PARAMETER", value: "" },
+        { label: "Rated Voltage", value: "51.2V" },
+        { label: "Nominal capacity", value: "96.6Ah | 4.95kWh" },
+        { label: "ELECTRIC PARAMETER", value: "" },
+        { label: "Charging modes", value: "CC/CV/CP" },
+        { label: "Max. Charge Current", value: "80A" },
+        { label: "Charging cut-off voltage", value: "57.4V" },
+        { label: "Discharging modes", value: "CC/CP" },
+        { label: "Discharging cut-off voltage", value: "44.8V" },
+        { label: "Max. Discharge Current", value: "150A" },
+        { label: "Peak Discharge Current", value: "350A (100ms)" },
+        { label: "BMS FUNCTIONS", value: "" },
+        { label: "Protection", value: "Overvoltage, Undervoltage, Short-circuit, High/Low Temp, Over-current" },
+        { label: "Features", value: "Dormancy function" },
+        { label: "Communication", value: "RS485, CAN & RS232" },
+        { label: "SIZE", value: "" },
+        { label: "Dimensions", value: "366 x 586 x 175.4mm" },
+        { label: "Weight", value: "about 48kg" },
+        { label: "ENVIRONMENT", value: "" },
+        { label: "Humidity", value: "5% to 95% RH, Non-condensing" },
+        { label: "Operating Temperature", value: "Charge: 0~+55°C/Discharge: -20~+60°C" },
+        { label: "Storage Temperature", value: "-20~+45°C (3 months) / -20~+25°C (1 year)" },
+        { label: "Shipment Status", value: "Voltage: 52V-54V, SOC: 60%-80%" },
+        { label: "COMPATIBILITY", value: "" },
+        { label: "Compatible Inverters", value: "Greenrich, Solis, Deye, Sunsynk, Growatt, Lux Power, Goodwe, East, SMA, Victron, Voltron, Chisage, Must, SofarSolar, Solarfam, Solax, Megarevo, VoltronicPower, SRNE, Pylon Tech, SAJ, Kehua, Sermatec, etc." }
+      ],
       whatsInTheBox: ["1 x Greenrich WM5000 Battery", "1 x Wall mounting bracket", "Communication Cables", "User Manual"],
       warranty: "10-Year Manufacturer's Warranty.",
       image: "/images/products/Battery.png",
@@ -523,3 +550,4 @@ aiHint: "electrical fuse"
   
 
     
+
