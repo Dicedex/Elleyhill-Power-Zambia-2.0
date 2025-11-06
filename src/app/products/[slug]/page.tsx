@@ -6,7 +6,7 @@ import { PRODUCTS } from "@/data/products";
 import { SiteLayout } from "@/components/layout";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle, Package, ShieldCheck, FileText } from "lucide-react";
+import { ArrowRight, CheckCircle, Package, ShieldCheck, FileText, Smartphone, Lightbulb, Wifi, Laptop, Tv2, Refrigerator } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Accordion,
@@ -20,6 +20,16 @@ export function generateStaticParams() {
     slug: product.slug,
   }));
 }
+
+const poweredAppliances = [
+    { icon: <Smartphone className="h-8 w-8 text-primary" />, name: "Phone Charger", power: "5W", duration: "25 Charges*" },
+    { icon: <Lightbulb className="h-8 w-8 text-primary" />, name: "LED Light", power: "10W", duration: "30 Hours**" },
+    { icon: <Wifi className="h-8 w-8 text-primary" />, name: "WiFi Router", power: "10W", duration: "30 Hours**" },
+    { icon: <Laptop className="h-8 w-8 text-primary" />, name: "Laptop Charger", power: "50W", duration: "6 Charges*" },
+    { icon: <Tv2 className="h-8 w-8 text-primary" />, name: "Television", power: "50W", duration: "6 Hours**" },
+    { icon: <Refrigerator className="h-8 w-8 text-primary" />, name: "Refrigerator", power: "50W", duration: "6 Hours**" },
+];
+
 
 export default function ProductDetailPage({ params }: { params: { slug: string } }) {
   const product = PRODUCTS.find((p) => p.slug === params.slug);
@@ -119,6 +129,28 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
             </Accordion>
           </div>
         </div>
+
+        {product.slug === 'kapa-energie-q300-portable-power-station' && (
+            <div className="mt-16 md:mt-24">
+                <div className="text-center mb-12">
+                    <h2 className="font-headline text-3xl md:text-4xl font-bold">What Can It Power?</h2>
+                    <p className="max-w-2xl mx-auto mt-4 text-lg text-muted-foreground">
+                        The KAPA Q300 is perfect for keeping your essential devices running. Here are a few examples:
+                    </p>
+                </div>
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6 text-center">
+                    {poweredAppliances.map((app, index) => (
+                        <Card key={index} className="flex flex-col items-center justify-center p-4">
+                            <div className="mb-3">{app.icon}</div>
+                            <p className="font-semibold">{app.name}</p>
+                            <p className="text-sm text-muted-foreground">{app.power}</p>
+                            <p className="text-xs font-bold text-primary">{app.duration}</p>
+                        </Card>
+                    ))}
+                </div>
+                <p className="text-center text-xs text-muted-foreground mt-4">*Based on average device consumption. **Runtimes are estimates and may vary.</p>
+            </div>
+        )}
       </div>
     </SiteLayout>
   );
