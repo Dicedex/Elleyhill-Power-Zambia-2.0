@@ -196,6 +196,8 @@ export type Product = {
         { label: "COMPATIBILITY", value: "" },
         { label: "Compatible Inverters", value: "Greenrich, Solis, Deye, Sunsynk, Growatt, Lux Power, Goodwe, East, SMA, Victron, Voltron, Chisage, Must, SofarSolar, Solarfam, Solax, Megarevo, VoltronicPower, SRNE, Pylon Tech, SAJ, Kehua, Sermatec, etc" }
       ],
+      whatsInTheBox: ["1 x SSRE EU10K 10kWh Battery", "Communication Cables", "User Manual"],
+      warranty: "1-Year Standard Manufacturer Warranty.",
       image: "/images/products/10k.png",
       aiHint: "large battery"
     },
