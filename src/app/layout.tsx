@@ -1,36 +1,115 @@
 import type { Metadata } from 'next';
+import { Inter, Space_Grotesk } from 'next/font/google';
 import './globals.css';
-import { Header } from '@/components/layout/header';
-import { Footer } from '@/components/layout/footer';
-import { Toaster } from "@/components/ui/toaster"
+import { Toaster } from "@/components/ui/toaster";
+import { ThemeProvider } from '@/components/theme-provider';
 
+const inter = Inter({ 
+  subsets: ['latin'],
+  variable: '--font-inter',
+});
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ['latin'],
+  variable: '--font-space-grotesk',
+});
+
+// Metadata for the page
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.elleyhillzm.com'),
   title: {
-    default: 'Elleyhill Power Connect',
-    template: '%s | Elleyhill Power Connect',
+    default: 'Elleyhill Power Zambia | Solar Panels, Inverters & Batteries',
+    template: '%s | Elleyhill Power Zambia',
   },
-  description: 'Leading power solutions provider in Zambia. Specializing in solar, grid integration, and energy efficiency for a sustainable future.',
+  description: 'Elleyhill Power Zambia is your trusted source for high-quality solar products offering solar panels, Greenrich inverters, and lithium batteries. Trusted solar installers and suppliers across Zambia. We offer expert solar installation, cleaning, and maintenance services across Zambia.',
+  keywords: [
+    'Elleyhill',
+    'Elleyhill Power',
+    'Elley Hill Zambia',
+    'solar company Zambia',
+    'Greenrich inverters',
+    'solar panels Zambia',
+    'lithium batteries Zambia',
+    'solar installation Zambia',
+    'panel cleaning',
+    'solar panels cleaning',
+    'maintenance cleaning',
+    'Zambia solar energy',
+  ],
+  authors: [{ name: 'Elleyhill Power' }],
+  openGraph: {
+    title: 'Elleyhill Power Zambia | Trusted Solar Energy Company',
+    description: 'Buy solar panels, inverters, and lithium batteries from Elleyhill Power. Professional installation, maintenance & solar cleaning services across Zambia.',
+    url: 'https://www.elleyhillzm.com',
+    siteName: 'Elleyhill Power Zambia',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Elleyhill Power Zambia Solar Products',
+      },
+    ],
+    locale: 'en_ZM',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Elleyhill Power Zambia | Solar Experts',
+    description: 'Your trusted source for solar panels, inverters, and batteries in Zambia.',
+    images: ['/og-image.jpg'],
+    creator: '@ElleyhillPower',
+  },
+  alternates: {
+    canonical: 'https://www.elleyhillzm.com',
+  },
+  icons: {
+    icon: '/favicon.png',
+  },
+  other: {
+    'theme-color': '#facc15',
+    'apple-mobile-web-app-title': 'Elleyhill Power',
+  },
 };
 
+// Root layout
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-      </head>
-      <body className="font-body antialiased bg-background text-foreground">
-        <div className="flex flex-col min-h-screen">
-          <Header />
-          <main className="flex-grow">{children}</main>
-          <Footer />
-        </div>
-        <Toaster />
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${inter.variable} ${spaceGrotesk.variable} font-body antialiased`}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+          <Toaster />
+          {/* Structured Data */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                name: "Elleyhill Power Zambia",
+                url: "https://www.elleyhillzm.com",
+                logo: "https://www.elleyhillzm.com/favicon.png",
+                sameAs: [
+                  "https://www.facebook.com/elleyhillpowerzambia",
+                  "https://www.instagram.com/elleyhillpowerzambia",
+                  "https://www.linkedin.com/company/elleyhillpower",
+                ],
+                description:
+                  "Elleyhill Power Zambia provides solar energy solutions, including solar panels, inverters, and batteries with expert installation services.",
+              }),
+            }}
+          />
+        </ThemeProvider>
       </body>
     </html>
   );
