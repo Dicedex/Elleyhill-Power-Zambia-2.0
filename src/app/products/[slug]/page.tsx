@@ -145,12 +145,12 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
                     <div className="space-y-4">
                       {groupedSpecifications.map((group, index) => (
                         <div key={index}>
-                          {group.category !== "General" && <h4 className="font-semibold mb-2">{group.category}</h4>}
+                          {group.category !== "General" && <h4 className="font-semibold mb-2 text-base uppercase tracking-wider">{group.category}</h4>}
                           <ul className="space-y-2 text-muted-foreground">
                             {group.items.map((spec, specIndex) => (
-                                <li key={specIndex} className="flex justify-between text-sm">
-                                    <span>{spec.label}:</span>
-                                    <span className="font-medium text-foreground">{spec.value}</span>
+                                <li key={specIndex} className="flex justify-between text-sm odd:bg-muted/50 p-2 rounded-md">
+                                    <span className="capitalize">{spec.label}:</span>
+                                    <span className="font-medium text-foreground text-right">{spec.value}</span>
                                 </li>
                             ))}
                           </ul>
