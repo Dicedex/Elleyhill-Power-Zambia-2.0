@@ -727,7 +727,7 @@ aiHint: "electrical fuse"
       description: "Short cable for safely connecting SSRE batteries in parallel.",
       price: "K 2,398.39",
       features: ["For Battery Interconnection", "Proper Gauge", "Pre-crimped Lugs", "Ensures safe connection"],
-      image: "/images/products/ssre bat.jpeg",
+      image: "/images/products/SRRE bat to bat.png",
       aiHint: "short cable"
   },
   {

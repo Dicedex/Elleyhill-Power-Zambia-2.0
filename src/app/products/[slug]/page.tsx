@@ -1,7 +1,9 @@
 
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { usePathname, notFound } from "next/navigation";
 import { PRODUCTS } from "@/data/products";
 import { SiteLayout } from "@/components/layout";
 import { Badge } from "@/components/ui/badge";
@@ -13,13 +15,9 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion"
-
-export function generateStaticParams() {
-  return PRODUCTS.map((product) => ({
-    slug: product.slug,
-  }));
-}
+} from "@/components/ui/accordion";
+import { useEffect, useState } from "react";
+import { Skeleton } from "@/components/ui/skeleton";
 
 const poweredAppliancesQ300 = [
     { icon: <Smartphone className="h-8 w-8 text-primary" />, name: "Phone Charger", power: "5W", duration: "25 Charges*" },
@@ -50,14 +48,43 @@ const poweredAppliancesQ2400 = [
     { icon: <Wrench className="h-8 w-8 text-primary" />, name: "Electric Drill", power: "900W", duration: "2.5 Hours**" },
 ];
 
+function ProductDetailSkeleton() {
+  return (
+    <div className="container py-16 md:py-24">
+      <div className="grid md:grid-cols-2 gap-12 items-start">
+        <Skeleton className="relative aspect-square rounded-lg" />
+        <div className="space-y-6">
+          <Skeleton className="h-6 w-1/4" />
+          <Skeleton className="h-10 w-3/4" />
+          <Skeleton className="h-6 w-full" />
+          <Skeleton className="h-24 w-full" />
+          <Skeleton className="h-48 w-full" />
+        </div>
+      </div>
+    </div>
+  );
+}
 
-export default function ProductDetailPage({ params }: { params: { slug: string } }) {
-  const product = PRODUCTS.find((p) => p.slug === params.slug);
+export default function ProductDetailPage() {
+  const pathname = usePathname();
+  const slug = pathname.split('/').pop();
+  const [product, setProduct] = useState<(typeof PRODUCTS)[0] | null | undefined>(undefined);
 
-  if (!product) {
-    notFound();
+  useEffect(() => {
+    if (slug) {
+      const foundProduct = PRODUCTS.find((p) => p.slug === slug);
+      setProduct(foundProduct || null);
+    }
+  }, [slug]);
+
+  if (product === undefined) {
+    return <SiteLayout><ProductDetailSkeleton /></SiteLayout>;
   }
 
+  if (product === null) {
+    notFound();
+  }
+  
   // Helper to group specifications by category (the empty value entries)
   const groupedSpecifications = product.specifications?.reduce((acc, spec) => {
     if (spec.value === "") {
