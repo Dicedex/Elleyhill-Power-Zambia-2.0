@@ -11,7 +11,7 @@ export function generateStaticParams() {
 
 export default function ProductDetailPage({ params }: { params: { slug: string } }) {
   const { slug } = params;
-  const product = PRODUCTS.find((p) => p.slug === slug);
+  const product = PRODUCTS.find((p) => p.slug.toLowerCase() === slug.toLowerCase());
 
   if (!product) {
     notFound();

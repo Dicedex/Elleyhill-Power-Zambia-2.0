@@ -34,7 +34,7 @@ export type Product = {
       category: "Batteries",
       description: "Reliable and efficient 5kWh battery storage from Greenrich, perfect for residential & business solar systems. Residential & Business Battery Storage",
       longDescription: "The Greenrich UP5000 is a top-tier 48V LFP battery module. It's designed for reliability and a long service life, making it a perfect match for residential energy storage systems. Its modular design allows for easy expansion.",
-      price: "K 19,394.00",
+      price: "K 13,300.00",
       features: [
         "4.95kWh Nominal Energy",
         "51.2V System",
@@ -85,7 +85,7 @@ export type Product = {
       slug: "greenrich-wm5000-wall-mounting-lithium-battery",
       category: "Batteries",
       description: "A space-saving wall-mountable 5kWh lithium battery for residential & business battery storage. Sleek design and powerful performance. Residential & Business Battery Storage",
-      price: "K 20,606.00",
+      price: "K 17,181.00",
       features: ["4.8kWh Nominal Energy", "Wall-Mount Design", "Integrated BMS", "Parallel Connection up to 16 units"],
       specifications: [
         { label: "BASIC PARAMETER", value: "" },
@@ -124,7 +124,7 @@ export type Product = {
       slug: "greenrich-up6100-lithium-battery",
       category: "Batteries",
       description: "A higher capacity 6.1kWh lithium battery for more demanding energy needs.",
-      price: "K 23,939.00",
+      price: "K 16,000.00",
       features: ["6.1kWh Nominal Energy", "51.2V System", "120Ah Capacity", "High-Performance Cells"],
       specifications: [
         { label: "BASIC PARAMETER", value: "" },
@@ -161,7 +161,7 @@ export type Product = {
       slug: "ssre-eu10k-10kwh-battery",
       category: "Batteries",
       description: "A high-capacity 10kWh battery from SSRE, ideal for larger homes and small businesses.",
-      price: "K 37,878.00",
+      price: "K 24,000.00",
       features: ["10.24kWh Nominal Energy", "51.2V System", "200Ah Capacity", "Robust and reliable"],
       specifications: [
         { label: "PHYSICAL", value: "" },
@@ -255,7 +255,7 @@ export type Product = {
       slug: "greenrich-hybrid-inverter-6kw",
       category: "Inverters",
       description: "A powerful 6kW hybrid inverter from Greenrich, perfect for residential and small commercial use.",
-      price: "K 26,000.00",
+      price: "K 20,000.00",
       features: ["6kW Hybrid Inverter", "48V System", "Pure Sine Wave", "Parallel capability"],
       specifications: [
         { label: "INPUT DC (PV SIDE)", value: "" },
@@ -329,7 +329,7 @@ export type Product = {
       slug: "greenrich-hybrid-inverter-8kw",
       category: "Inverters",
       description: "An 8kW hybrid inverter from Greenrich, offering high performance for larger systems.",
-      price: "K 39,500.00",
+      price: "K 30,000.00",
       features: ["8kW Hybrid Inverter", "48V System", "Advanced MPPT tracking", "Grid-tie with backup"],
       specifications: [
         { label: "INPUT DC (PV SIDE)", value: "" },
@@ -404,7 +404,7 @@ export type Product = {
         category: "Portable",
         description: "Compact and lightweight power station for camping and emergencies. Not suitable for heating appliances.",
         longDescription: "The KAPA Energie Q300 is your go-to solution for portable power. Whether you're camping, on a road trip, or facing a power outage, this compact device keeps your essential electronics running. Its pure sine wave inverter ensures clean and safe power for sensitive devices like laptops and cameras. Please note, this unit is not designed for high-power heating appliances such as kettles, hair dryers, or stoves.",
-        price: "K 4,303.43",
+        price: "K 3,200.00",
         features: [
             "300W Pure Sine Wave Inverter",
             "Multiple Charging Options (AC, Solar, Car)",
@@ -441,7 +441,7 @@ export type Product = {
       category: "Portable",
       description: "A versatile and powerful portable power station for all your outdoor adventures. Not suitable for heating appliances.",
       longDescription: "The KAPA Energie Q600 is a robust portable power solution, ideal for camping, outdoor activities, and as a home backup. With a 600W pure sine wave inverter, it can power a wide range of devices. However, it is not suitable for high-power heating appliances.",
-      price: "K 7,620.66",
+      price: "K 6,000.00",
       features: [
         "600W Pure Sine Wave Inverter",
         "Multiple Output Ports (AC, DC, USB)",
@@ -475,7 +475,7 @@ export type Product = {
         slug: "kapa-energie-q2400-portable-power-station",
         category: "Portable",
         description: "High-capacity power station to run demanding appliances and tools off-grid.",
-        price: "K 26,896.44",
+        price: "K 16,000.00",
         features: ["2400W High Power Output", "Large Battery Capacity", "UPS Functionality", "Pure Sine Wave"],
         specifications: [
             { label: "Rated Capacity", value: "1743wH - (Samsung Lithium Battery)" },
@@ -499,7 +499,7 @@ export type Product = {
       slug: "kapa-energie-li-1000",
       category: "Portable",
       description: "A reliable lithium-based portable power solution with a built-in inverter.",
-      price: "K 15,689.59",
+      price: "K 12,000.00",
       features: [
         "All-in-one solution with integrated inverter and battery",
         "Max 1500 cycles lithium battery with a 5 years service life",
@@ -545,7 +545,7 @@ export type Product = {
       slug: "kapa-energies-1000-gel-battery",
       category: "Portable",
       description: "An affordable 1000W portable power station with a durable Gel battery.",
-      price: "K 10,086.16",
+      price: "K 7,500.00",
       features: ["1000W Inverter", "Deep Cycle Gel Battery", "Multiple Outputs", "Cost-Effective"],
       image: "/images/products/gel.jpg",
       aiHint: "power station"
@@ -555,7 +555,7 @@ export type Product = {
       slug: "pv-combiner-box-5kw",
       category: "Accessories",
       description: "Essential protection for a 5kW solar array.",
-      price: "K 5,603.18",
+      price: "K 5,323.02",
       features: ["Suits 5kW systems", "Overcurrent & Surge Protection", "Weatherproof Enclosure", "Easy Installation"],
       image: "/images/products/pv.jpg",
       aiHint: "electrical box"
@@ -565,7 +565,7 @@ export type Product = {
       slug: "pv-combiner-box-6kw",
       category: "Accessories",
       description: "Essential protection for a 6kW solar array.",
-      price: "K 5,603.18",
+      price: "K 5,323.02",
       features: ["Suits 6kW systems", "Overcurrent & Surge Protection", "Weatherproof Enclosure", "Easy Installation"],
       image: "/images/products/pv.jpg",
       aiHint: "electrical box"
@@ -575,7 +575,7 @@ export type Product = {
       slug: "pv-combiner-box-8kw",
       category: "Accessories",
       description: "Essential protection for an 8kW solar array. Note: Typo from user, assuming 'PC' is 'PV'.",
-      price: "K 5,603.18",
+      price: "K 5,323.02",
       features: ["Suits 8kW systems", "Overcurrent & Surge Protection", "Weatherproof Enclosure", "Easy Installation"],
       image: "/images/products/pv.jpg",
       aiHint: "electrical box"
@@ -585,7 +585,7 @@ export type Product = {
       slug: "db-combiner-box-5kw",
       category: "Accessories",
       description: "Distribution board combiner box for 5kW systems.",
-      price: "K 5,759.98",
+      price: "K 5,7471.98",
       features: ["Suits 5kW systems", "AC/DC Protection", "Circuit Breakers Included", "Organized Wiring"],
       image: "/images/products/combiner-box1.jpeg",
       aiHint: "circuit breaker"
@@ -595,7 +595,7 @@ export type Product = {
       slug: "db-combiner-box-6kw",
       category: "Accessories",
       description: "Distribution board combiner box for 6kW systems.",
-      price: "K 5,759.98",
+      price: "K 5,471.98",
       features: ["Suits 6kW systems", "AC/DC Protection", "Circuit Breakers Included", "Organized Wiring"],
       image: "/images/products/combiner-box1.jpeg",
       aiHint: "circuit breaker"
@@ -605,7 +605,7 @@ export type Product = {
       slug: "db-combiner-box-8kw",
       category: "Accessories",
       description: "Distribution board combiner box for 8kW systems.",
-      price: "K 5,759.98",
+      price: "K 5,471.98",
       features: ["Suits 8kW systems", "AC/DC Protection", "Circuit Breakers Included", "Organized Wiring"],
       image: "/images/products/combiner-box1.jpeg",
       aiHint: "circuit breaker"
@@ -615,7 +615,7 @@ export type Product = {
       slug: "battery-cable-with-lug",
       category: "Accessories",
       description: "High-quality copper cable with pre-attached lugs for secure battery connections.",
-      price: "K 1,542.39",
+      price: "K 1,465.27",
       features: ["Flexible Copper Wire", "Corrosion-Resistant Lugs", "Available in various lengths", "Ensures minimal power loss"],
       image: "/images/products/bat with lugs.png",
       aiHint: "copper cable"
