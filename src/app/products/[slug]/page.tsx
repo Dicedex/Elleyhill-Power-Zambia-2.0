@@ -3,7 +3,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname, notFound } from "next/navigation";
+import { notFound } from "next/navigation";
 import { PRODUCTS } from "@/data/products";
 import { SiteLayout } from "@/components/layout";
 import { Badge } from "@/components/ui/badge";
@@ -18,6 +18,13 @@ import {
 } from "@/components/ui/accordion";
 import { useEffect, useState } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
+
+export function generateStaticParams() {
+  return PRODUCTS.map((product) => ({
+    slug: product.slug,
+  }));
+}
+
 
 const poweredAppliancesQ300 = [
     { icon: <Smartphone className="h-8 w-8 text-primary" />, name: "Phone Charger", power: "5W", duration: "25 Charges*" },
@@ -65,9 +72,8 @@ function ProductDetailSkeleton() {
   );
 }
 
-export default function ProductDetailPage() {
-  const pathname = usePathname();
-  const slug = pathname.split('/').pop();
+export default function ProductDetailPage({ params }: { params: { slug: string } }) {
+  const { slug } = params;
   const [product, setProduct] = useState<(typeof PRODUCTS)[0] | null | undefined>(undefined);
 
   useEffect(() => {

@@ -4,6 +4,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { useSearchParams } from 'next/navigation'
 import { PRODUCTS } from "@/data/products";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -15,25 +16,18 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 const productCategories = ["All", ...Array.from(new Set(PRODUCTS.map((p) => p.category)))];
 
-function getCategoryFromURL() {
-  if (typeof window === "undefined") {
-    return null;
-  }
-  const params = new URLSearchParams(window.location.search);
-  return params.get('category');
-}
-
 export default function ProductsPage() {
+  const searchParams = useSearchParams()
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
     setIsClient(true);
-    const categoryFromURL = getCategoryFromURL();
+    const categoryFromURL = searchParams.get('category');
     if (categoryFromURL) {
       setSelectedCategory(categoryFromURL);
     }
-  }, []);
+  }, [searchParams]);
 
   const filteredProducts = selectedCategory === "All"
     ? PRODUCTS
