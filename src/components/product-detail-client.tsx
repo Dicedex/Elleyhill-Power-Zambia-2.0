@@ -8,12 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle, Package, ShieldCheck, FileText, Smartphone, Lightbulb, Wifi, Laptop, Tv2, Refrigerator, ListTree, Coffee, Wrench, Zap, TrendingUp, Box } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { type Product } from "@/data/products";
 
 
@@ -72,7 +67,7 @@ export function ProductDetailClient({ product }: { product: Product }) {
               src={product.image}
               alt={product.name}
               fill
-              className="object-contain"
+              className="object-contain p-4"
               data-ai-hint={product.aiHint}
             />
           </div>
@@ -96,44 +91,33 @@ export function ProductDetailClient({ product }: { product: Product }) {
               </Button>
             </div>
 
-            <Card>
-              <CardHeader>
-                <CardTitle>Key Features</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3">
-                  {product.features.map((feature, index) => (
-                    <li key={index} className="flex items-center gap-3">
-                      <CheckCircle className="h-5 w-5 text-green-500" />
-                      <span className="text-muted-foreground">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Accordion type="single" collapsible className="w-full">
+            <Tabs defaultValue="features" className="w-full">
+              <TabsList className="grid w-full grid-cols-2 md:grid-cols-4">
+                <TabsTrigger value="features">Features</TabsTrigger>
+                {product.longDescription && <TabsTrigger value="description">Description</TabsTrigger>}
+                {groupedSpecifications && groupedSpecifications.length > 0 && <TabsTrigger value="specs">Specs</TabsTrigger>}
+                {product.whatsInTheBox && product.whatsInTheBox.length > 0 && <TabsTrigger value="box">In the Box</TabsTrigger>}
+              </TabsList>
+              <TabsContent value="features" className="py-6">
+                  <ul className="space-y-4">
+                    {product.features.map((feature, index) => (
+                      <li key={index} className="flex items-center gap-3">
+                        <CheckCircle className="h-5 w-5 text-green-500" />
+                        <span className="text-muted-foreground">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+              </TabsContent>
               {product.longDescription && (
-                <AccordionItem value="description">
-                  <AccordionTrigger>
-                    <div className="flex items-center gap-2 font-semibold">
-                      <FileText className="h-5 w-5" /> Detailed Description
+                <TabsContent value="description" className="py-6">
+                    <div className="prose prose-sm max-w-none text-muted-foreground">
+                        {product.longDescription}
                     </div>
-                  </AccordionTrigger>
-                  <AccordionContent className="prose prose-sm max-w-none text-muted-foreground">
-                    {product.longDescription}
-                  </AccordionContent>
-                </AccordionItem>
+                </TabsContent>
               )}
-               {groupedSpecifications && groupedSpecifications.length > 0 && (
-                <AccordionItem value="specifications">
-                  <AccordionTrigger>
-                    <div className="flex items-center gap-2 font-semibold">
-                      <ListTree className="h-5 w-5" /> Specifications
-                    </div>
-                  </AccordionTrigger>
-                  <AccordionContent>
-                    <div className="space-y-4">
+              {groupedSpecifications && groupedSpecifications.length > 0 && (
+                <TabsContent value="specs" className="py-6">
+                  <div className="space-y-4">
                       {groupedSpecifications.map((group, index) => (
                         <div key={index}>
                           {group.category !== "General" && <h4 className="font-semibold mb-2 text-base uppercase tracking-wider">{group.category}</h4>}
@@ -148,36 +132,16 @@ export function ProductDetailClient({ product }: { product: Product }) {
                         </div>
                       ))}
                     </div>
-                  </AccordionContent>
-                </AccordionItem>
+                </TabsContent>
               )}
               {product.whatsInTheBox && product.whatsInTheBox.length > 0 && (
-                <AccordionItem value="in-the-box">
-                  <AccordionTrigger>
-                    <div className="flex items-center gap-2 font-semibold">
-                      <Package className="h-5 w-5" /> What's in the Box
-                    </div>
-                  </AccordionTrigger>
-                  <AccordionContent>
-                     <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+                <TabsContent value="box" className="py-6">
+                    <ul className="list-disc list-inside space-y-2 text-muted-foreground">
                         {product.whatsInTheBox.map((item, index) => <li key={index}>{item}</li>)}
                     </ul>
-                  </AccordionContent>
-                </AccordionItem>
+                </TabsContent>
               )}
-               {product.warranty && (
-                <AccordionItem value="warranty">
-                  <AccordionTrigger>
-                    <div className="flex items-center gap-2 font-semibold">
-                      <ShieldCheck className="h-5 w-5" /> Warranty Information
-                    </div>
-                  </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground">
-                    {product.warranty}
-                  </AccordionContent>
-                </AccordionItem>
-              )}
-            </Accordion>
+            </Tabs>
           </div>
         </div>
 
@@ -360,3 +324,5 @@ export function ProductDetailClient({ product }: { product: Product }) {
     </SiteLayout>
   );
 }
+
+    
