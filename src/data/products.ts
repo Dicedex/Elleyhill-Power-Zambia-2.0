@@ -737,7 +737,7 @@ aiHint: "electrical fuse"
       description: "Complete cable kit for connecting your SSRE battery bank to an inverter.",
       price: "K 3,013.20",
       features: ["Complete Kit", "Inverter to Battery", "Includes Lugs", "Simplifies Installation"],
-      image: "/images/products/ssre kit.jpeg",
+      image: "/images/products/ssre bat.jpeg",
       aiHint: "cable kit"
     }
   ];
