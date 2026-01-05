@@ -16,11 +16,11 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
-import { PRODUCTS } from "@/data/products";
+import { getProductCategories } from "@/data/products";
 import { ThemeToggle } from "./theme-toggle";
 import { Icons } from "./icons";
 
-const productCategories = [...Array.from(new Set(PRODUCTS.map((p) => p.category)))];
+const productCategories = getProductCategories();
 
 export function SiteHeader() {
   return (
@@ -203,6 +203,8 @@ export function SiteLayout({ children }: { children: React.ReactNode }) {
         </div>
     );
 }
+
+    
 
     
 

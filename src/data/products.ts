@@ -558,7 +558,7 @@ export type Product = {
       price: "K 5,323.02",
       features: ["Suits 5kW systems", "Overcurrent & Surge Protection", "Weatherproof Enclosure", "Easy Installation"],
       image: "/images/products/pv.jpg",
-      aiHint: "electrical box"
+aiHint: "electrical box"
     },
     {
       name: "PV Combiner Box 6kW",
@@ -568,7 +568,7 @@ export type Product = {
       price: "K 5,323.02",
       features: ["Suits 6kW systems", "Overcurrent & Surge Protection", "Weatherproof Enclosure", "Easy Installation"],
       image: "/images/products/pv.jpg",
-      aiHint: "electrical box"
+aiHint: "electrical box"
     },
     {
       name: "PV Combiner box 8kw",
@@ -578,7 +578,7 @@ export type Product = {
       price: "K 5,323.02",
       features: ["Suits 8kW systems", "Overcurrent & Surge Protection", "Weatherproof Enclosure", "Easy Installation"],
       image: "/images/products/pv.jpg",
-      aiHint: "electrical box"
+aiHint: "electrical box"
     },
     {
       name: "DB Combiner Box 5kW",
@@ -742,13 +742,16 @@ aiHint: "electrical fuse"
     }
   ];
   
+export function getProductBySlug(slug: string): Product | undefined {
+  if (!slug) {
+    return undefined;
+  }
+  const lowerCaseSlug = slug.toLowerCase();
+  return PRODUCTS.find((p) => p.slug.toLowerCase() === lowerCaseSlug);
+}
+    
+export function getProductCategories(): string[] {
+    return [...Array.from(new Set(PRODUCTS.map((p) => p.category)))];
+}
 
     
-
-
-
-    
-
-
-
-

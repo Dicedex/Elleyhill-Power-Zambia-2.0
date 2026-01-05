@@ -1,6 +1,6 @@
 
 import { notFound } from "next/navigation";
-import { PRODUCTS } from "@/data/products";
+import { PRODUCTS, getProductBySlug } from "@/data/products";
 import { ProductDetailClient } from "@/components/product-detail-client";
 
 export function generateStaticParams() {
@@ -11,14 +11,7 @@ export function generateStaticParams() {
 
 export default function ProductDetailPage({ params }: { params: { slug: string } }) {
   const { slug } = params;
-
-  if (!slug) {
-    notFound();
-  }
-
-  const product = PRODUCTS.find(
-    (p) => p.slug.toLowerCase() === slug.toLowerCase()
-  );
+  const product = getProductBySlug(slug);
 
   if (!product) {
     notFound();
