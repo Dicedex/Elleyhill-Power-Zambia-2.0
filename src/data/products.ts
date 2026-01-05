@@ -625,7 +625,7 @@ export type Product = {
       slug: "disconnect-box-160a-48vdc",
       category: "Accessories",
       description: "Safety disconnect switch for your 48V battery system.",
-      price: "K 1,679.99",
+      price: "K 1,595.99",
       features: ["160A Rating", "48V DC Compatible", "Lockable Handle", "Essential Safety Device"],
       image: "/images/products/disconnector box.png",
       aiHint: "switch box"
@@ -635,7 +635,7 @@ export type Product = {
       slug: "riken-fuse-160a",
       category: "Accessories",
       description: "Reliable 160A fuse for protecting your solar components.",
-      price: "K 169.60",
+      price: "K 169.12",
       features: ["160A Current Rating", "High-quality construction", "Protects against overcurrents", "Essential for system safety"],
       image: "/images/products/fuse.png",
 aiHint: "electrical fuse"
@@ -645,7 +645,7 @@ aiHint: "electrical fuse"
       slug: "ibr-corr-harvey-4p-mounting-structure",
       category: "Accessories",
       description: "Mounting structure for 4 panels on IBR, Corrugated, or Harvey tile roofs.",
-      price: "K 2,815.99",
+      price: "K 2,675.19",
       features: ["For 4 Panels", "Suits metal sheet roofs", "Durable Aluminum", "Weather Resistant"],
       image: "/images/products/ibr.jpg",
       aiHint: "metal rack"
@@ -655,7 +655,7 @@ aiHint: "electrical fuse"
       slug: "tile-4p-mounting-structure",
       category: "Accessories",
       description: "Specialized mounting structure for 4 panels on tile roofs.",
-      price: "K 4,614.38",
+      price: "K 3,800.00",
       features: ["For 4 Panels", "Designed for tile roofs", "Secure and Reliable", "Prevents roof damage"],
       image: "/images/products/tile-roof-mount.jpg",
       aiHint: "roof mount"
@@ -665,7 +665,7 @@ aiHint: "electrical fuse"
       slug: "200m-black-6mm-pv-cable",
       category: "Accessories",
       description: "200-meter roll of black 6mm solar PV cable.",
-      price: "K 5,605.20",
+      price: "K 5,327.60",
       features: ["200m Length", "6mm Gauge", "UV Resistant", "Double Insulated"],
       image: "/images/products/pv black.jpeg",
       aiHint: "black wire"
@@ -675,7 +675,7 @@ aiHint: "electrical fuse"
       slug: "200m-red-6mm-pv-cable",
       category: "Accessories",
       description: "200-meter roll of red 6mm solar PV cable.",
-      price: "K 5,605.20",
+      price: "K 5,327.60",
       features: ["200m Length", "6mm Gauge", "UV Resistant", "Double Insulated"],
       image: "/images/products/pv red.jpg",
       aiHint: "red wire"
@@ -685,7 +685,7 @@ aiHint: "electrical fuse"
       slug: "1m-pv-cable-red-per-meter",
       category: "Accessories",
       description: "Red 6mm solar PV cable sold by the meter.",
-      price: "K 35.00",
+      price: "K 32.00",
       features: ["Sold Per Meter", "6mm Gauge", "UV Resistant", "For custom lengths"],
       image: "/images/products/1m red.jpeg",
       aiHint: "red wire"
@@ -695,7 +695,7 @@ aiHint: "electrical fuse"
       slug: "1m-pv-cable-black-per-meter",
       category: "Accessories",
       description: "Black 6mm solar PV cable sold by the meter.",
-      price: "K 35.00",
+      price: "K 32.00",
       features: ["Sold Per Meter", "6mm Gauge", "UV Resistant", "For custom lengths"],
       image: "/images/products/1m black.png",
       aiHint: "black wire"
@@ -705,7 +705,7 @@ aiHint: "electrical fuse"
       slug: "mc4-male-female-connector",
       category: "Accessories",
       description: "Standard MC4 connectors for secure, weatherproof PV cable connections.",
-      price: "K 35.20",
+      price: "K 33.44",
       features: ["Male & Female Pair", "IP67 Waterproof", "Easy to install", "Universal compatibility"],
       image: "/images/products/mc4-set.jpg",
       aiHint: "electrical connector"
@@ -725,7 +725,7 @@ aiHint: "electrical fuse"
       slug: "ssre-cable-battery-to-battery",
       category: "Accessories",
       description: "Short cable for safely connecting SSRE batteries in parallel.",
-      price: "K 2,398.39",
+      price: "K 2,278.47",
       features: ["For Battery Interconnection", "Proper Gauge", "Pre-crimped Lugs", "Ensures safe connection"],
       image: "/images/products/SRRE bat to bat.png",
       aiHint: "short cable"
@@ -735,7 +735,7 @@ aiHint: "electrical fuse"
       slug: "ssre-cable-kit-with-lugs",
       category: "Accessories",
       description: "Complete cable kit for connecting your SSRE battery bank to an inverter.",
-      price: "K 3,013.20",
+      price: "K 2,862.54",
       features: ["Complete Kit", "Inverter to Battery", "Includes Lugs", "Simplifies Installation"],
       image: "/images/products/ssre bat.jpeg",
       aiHint: "cable kit"
