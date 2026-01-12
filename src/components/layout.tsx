@@ -173,7 +173,7 @@ export function SiteFooter() {
                     <address className="not-italic text-sm space-y-2">
                         <a href="mailto:admin@elleyhill.co.za" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
                             <Mail className="h-4 w-4" />
-                            <span>admin@elleyhill.co.za</span>
+                            <span>admin@greenrich.co.za</span>
                         </a>
                         <a href="tel:+260974041745" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
                             <Phone className="h-4 w-4" />
@@ -181,7 +181,7 @@ export function SiteFooter() {
                         </a>
                          <div className="flex items-start gap-2 text-muted-foreground">
                             <MapPin className="h-4 w-4 mt-1 flex-shrink-0" />
-                            <span>Chrislex warehouse unit 6, Roma Park Commercial (Off Zambezi Rd), Lusaka</span>
+                            <span>East Park Mall, Lusaka</span>
                         </div>
                     </address>
                 </div>

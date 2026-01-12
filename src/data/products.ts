@@ -546,7 +546,26 @@ export type Product = {
       category: "Portable",
       description: "An affordable 1000W portable power station with a durable Gel battery.",
       price: "K 7,500.00",
-      features: ["1000W Inverter", "Deep Cycle Gel Battery", "Multiple Outputs", "Cost-Effective"],
+      features: ["1000W Inverter", "Deep Cycle Gel Battery", "Multiple Outputs", "Cost-Effective", "Not suitable for heating appliances"],
+      specifications: [
+        { label: "INVERTER", value: "" },
+        { label: "Rated Power", value: "1000W" },
+        { label: "Output Voltage", value: "230VAC" },
+        { label: "Output Frequency", value: "50Hz/60Hz" },
+        { label: "Output Wave", value: "Modified Sine Wave" },
+        { label: "BATTERY", value: "" },
+        { label: "Battery Type", value: "Gel Deep Cycle" },
+        { label: "Battery Capacity", value: "100Ah" },
+        { label: "Rated Voltage", value: "12V" },
+        { label: "SOLAR INPUT", value: "" },
+        { label: "Max PV Power", value: "400W" },
+        { label: "Charge Controller Type", value: "PWM" },
+        { label: "Rated Charge Current", value: "30A" },
+        { label: "OUTPUTS", value: "" },
+        { label: "AC Outlets", value: "2" },
+        { label: "USB Ports", value: "2x 5V/2A" },
+        { label: "DC Ports", value: "2x 12V" }
+    ],
       image: "/images/products/gel.jpg",
       aiHint: "power station"
     },
@@ -574,7 +593,7 @@ aiHint: "electrical box"
       name: "PV Combiner box 8kw",
       slug: "pv-combiner-box-8kw",
       category: "Accessories",
-      description: "Essential protection for an 8kW solar array. Note: Typo from user, assuming 'PC' is 'PV'.",
+      description: "Essential protection for an 8kW solar array.",
       price: "K 5,323.02",
       features: ["Suits 8kW systems", "Overcurrent & Surge Protection", "Weatherproof Enclosure", "Easy Installation"],
       image: "/images/products/pv.jpg",
@@ -585,7 +604,7 @@ aiHint: "electrical box"
       slug: "db-combiner-box-5kw",
       category: "Accessories",
       description: "Distribution board combiner box for 5kW systems.",
-      price: "K 5,7471.98",
+      price: "K 5,471.98",
       features: ["Suits 5kW systems", "AC/DC Protection", "Circuit Breakers Included", "Organized Wiring"],
       image: "/images/products/combiner-box1.jpeg",
       aiHint: "circuit breaker"
@@ -753,7 +772,3 @@ export function getProductBySlug(slug: string): Product | undefined {
 export function getProductCategories(): string[] {
     return [...Array.from(new Set(PRODUCTS.map((p) => p.category)))];
 }
-
-    
-
-    
