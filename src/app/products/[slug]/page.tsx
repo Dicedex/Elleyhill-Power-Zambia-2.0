@@ -19,3 +19,5 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
 
   return <ProductDetailClient product={product} />;
 }
+
+    
