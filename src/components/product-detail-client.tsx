@@ -54,14 +54,14 @@ const poweredAppliancesQ600 = [
 ];
 
 const poweredAppliancesQ2400 = [
-  { icon: <Smartphone className="h-8 w-8 text-primary" />, name: "Phone Charger", power: "5W", duration: "480 Charges*" },
-  { icon: <Lightbulb className="h-8 w-8 text-primary" />, name: "LED Light", power: "10W", duration: "240 Hours**" },
-  { icon: <Wifi className="h-8 w-8 text-primary" />, name: "WiFi Router", power: "10W", duration: "240 Hours**" },
-  { icon: <Laptop className="h-8 w-8 text-primary" />, name: "Laptop Charger", power: "50W", duration: "48 Charges*" },
-  { icon: <Tv2 className="h-8 w-8 text-primary" />, name: "Television", power: "50W", duration: "48 Hours**" },
-  { icon: <Refrigerator className="h-8 w-8 text-primary" />, name: "Refrigerator", power: "50W", duration: "48 Hours**" },
-  { icon: <Coffee className="h-8 w-8 text-primary" />, name: "Coffee Machine", power: "1400W", duration: "1.5 Hours**" },
-  { icon: <Wrench className="h-8 w-8 text-primary" />, name: "Electric Drill", power: "900W", duration: "2.5 Hours**" },
+  { icon: <Smartphone className="h-8 w-8 text-primary" />, name: "Phone Charger", power: "480 Charges*" },
+  { icon: <Lightbulb className="h-8 w-8 text-primary" />, name: "LED Light", power: "240 Hours**" },
+  { icon: <Wifi className="h-8 w-8 text-primary" />, name: "WiFi Router", power: "240 Hours**" },
+  { icon: <Laptop className="h-8 w-8 text-primary" />, name: "Laptop Charger", power: "48 Charges*" },
+  { icon: <Tv2 className="h-8 w-8 text-primary" />, name: "Television", power: "48 Hours**" },
+  { icon: <Refrigerator className="h-8 w-8 text-primary" />, name: "Refrigerator", power: "48 Hours**" },
+  { icon: <Coffee className="h-8 w-8 text-primary" />, name: "Coffee Machine", power: "1.5 Hours**" },
+  { icon: <Wrench className="h-8 w-8 text-primary" />, name: "Electric Drill", power: "2.5 Hours**" },
 ];
 
 const Breadcrumbs = ({ product }: { product: any }) => (
@@ -187,6 +187,7 @@ const PowerApplianceSection = ({
         </Card>
       ))}
     </div>
+    
   </div>
 );
 
@@ -228,7 +229,6 @@ export function ProductDetailClient({ product }: { product: Product }) {
                         Get a Quote
                       </a>
                     </Button>
-                    <Button variant="outline" size="lg" className="w-full">View Details</Button>
                 </div>
             </div>
 
@@ -334,3 +334,5 @@ export function ProductDetailClient({ product }: { product: Product }) {
     </SiteLayout>
   );
 }
+
+    
