@@ -246,3 +246,4 @@ export function ProductDetailClient({ product }: { product: Product }) {
 }
 
     
+    
