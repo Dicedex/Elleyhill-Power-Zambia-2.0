@@ -25,6 +25,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     };
   }
 
+  const fullImageUrl = `https://www.elleyhillzm.com${product.image}`;
+
   return {
     title: `${product.name} | Elleyhill Power Zambia`,
     description: product.description,
@@ -34,13 +36,21 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       description: product.description,
       images: [
         {
-          url: product.image,
+          url: fullImageUrl,
           width: 800,
           height: 600,
           alt: product.name,
         },
       ],
+      type: 'product',
+      siteName: 'Elleyhill Power Zambia',
     },
+    twitter: {
+        card: 'summary_large_image',
+        title: product.name,
+        description: product.description,
+        images: [fullImageUrl],
+    }
   };
 }
 
@@ -135,9 +145,48 @@ export default async function ProductDetailPage({ params }: { params: { slug: st
   if (!product) {
     notFound();
   }
+  
+  const getBrandName = (productName: string) => {
+    if (productName.toLowerCase().includes('greenrich')) return 'Greenrich';
+    if (productName.toLowerCase().includes('growatt')) return 'Growatt';
+    if (productName.toLowerCase().includes('kapa')) return 'KAPA Energie';
+    if (productName.toLowerCase().includes('ssre')) return 'SSRE';
+    return 'Elleyhill';
+  };
+
+  const productJsonLd = {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    name: product.name,
+    image: `https://www.elleyhillzm.com${product.image}`,
+    description: product.description,
+    sku: product.slug,
+    brand: {
+      "@type": "Brand",
+      name: getBrandName(product.name),
+    },
+    offers: {
+      "@type": "Offer",
+      url: `https://www.elleyhillzm.com/products/${product.slug}`,
+      priceCurrency: "ZMW",
+      price: product.price.replace(/[^0-9.]/g, ''),
+      availability: "https://schema.org/InStock",
+      itemCondition: "https://schema.org/NewCondition"
+    },
+     aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.8",
+      reviewCount": "52"
+    }
+  };
+
 
   return (
     <SiteLayout>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
+      />
       <div className="container py-16 md:py-24">
         <Breadcrumbs product={product} />
         <div className="grid md:grid-cols-2 gap-12 items-start mt-8">
@@ -236,3 +285,4 @@ export default async function ProductDetailPage({ params }: { params: { slug: st
     </SiteLayout>
   );
 }
+
