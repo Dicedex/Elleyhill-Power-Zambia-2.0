@@ -173,10 +173,10 @@ export default async function ProductDetailPage({ params }: { params: { slug: st
       availability: "https://schema.org/InStock",
       itemCondition: "https://schema.org/NewCondition"
     },
-     aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.8",
-      reviewCount": "52"
+    aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: "4.8",
+        "reviewCount": "52"
     }
   };
 
@@ -285,4 +285,5 @@ export default async function ProductDetailPage({ params }: { params: { slug: st
     </SiteLayout>
   );
 }
+
 
