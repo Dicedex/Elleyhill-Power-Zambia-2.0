@@ -9,7 +9,7 @@ import { SiteLayout } from "@/components/layout";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle, Package, ShieldCheck, FileText, ChevronRight, Home, List } from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle, CardFooter, CardDescription } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
 import {
   Accordion,
   AccordionContent,
@@ -17,6 +17,11 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
+export function generateStaticParams() {
+  return PRODUCTS.map((product) => ({
+    slug: product.slug,
+  }));
+}
 
 const Breadcrumbs = ({ product }: { product: any }) => (
   <nav className="flex items-center text-sm text-muted-foreground mb-4">
@@ -62,7 +67,7 @@ const RelatedProducts = ({ currentProduct }: { currentProduct: any }) => {
                   <CardTitle>{product.name}</CardTitle>
               </CardHeader>
               <CardContent className="flex-grow">
-                <CardDescription>{product.description}</CardDescription>
+                <p className="text-muted-foreground">{product.description}</p>
               </CardContent>
               <CardFooter className="flex items-center justify-end bg-muted/50 p-4 mt-auto">
                     <WhatsAppButton product={product} />
