@@ -1,7 +1,5 @@
 
-// /home/user/studio/src/app/products/[slug]/page.tsx
-
-import { notFound } from "next/navigation"; // make sure this is imported
+import { notFound } from "next/navigation";
 import { PRODUCTS, getProductBySlug } from "@/data/products";
 import { ProductDetailClient } from "@/components/product-detail-client";
 
@@ -21,4 +19,9 @@ export default function ProductDetailPage({
   const product = getProductBySlug(slug);
 
   // If no product matches the slug, show 404
-  if (!product
+  if (!product) {
+    notFound();
+  }
+
+  return <ProductDetailClient product={product} />;
+}
