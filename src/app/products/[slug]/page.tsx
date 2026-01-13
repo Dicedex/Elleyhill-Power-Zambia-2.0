@@ -6,8 +6,8 @@ import { PRODUCTS, getProductBySlug } from "@/data/products";
 import { SiteLayout } from "@/components/layout";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle, Package, ShieldCheck, FileText, ChevronRight, Home } from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle, CardFooter, CardDescription } from "@/components/ui/card";
+import { ArrowRight, CheckCircle, Package, ShieldCheck, FileText, ChevronRight, Home, List } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
 import {
   Accordion,
   AccordionContent,
@@ -105,7 +105,7 @@ const RelatedProducts = ({ currentProduct }: { currentProduct: any }) => {
                   <CardTitle>{product.name}</CardTitle>
               </CardHeader>
               <CardContent className="flex-grow">
-                <CardDescription>{product.description}</CardDescription>
+                <p className="text-muted-foreground">{product.description}</p>
               </CardContent>
               <CardFooter className="flex items-center justify-end bg-muted/50 p-4 mt-auto">
                   <Button variant="ghost" className="text-primary group-hover:translate-x-1 transition-transform">
@@ -168,7 +168,6 @@ export default async function ProductDetailPage({ params }: { params: { slug: st
       "@type": "Offer",
       url: `https://www.elleyhillzm.com/products/${product.slug}`,
       priceCurrency: "ZMW",
-      price: product.price.replace(/[^0-9.]/g, ''),
       availability: "https://schema.org/InStock",
       itemCondition: "https://schema.org/NewCondition"
     },
@@ -206,14 +205,21 @@ export default async function ProductDetailPage({ params }: { params: { slug: st
               <p className="mt-2 text-lg text-muted-foreground">{product.description}</p>
             </div>
 
-            <div className="p-6 bg-muted/50 rounded-lg flex flex-col sm:flex-row items-start sm:items-center sm:justify-between gap-4">
-              <div/>
-              <Button asChild size="lg" className="w-full sm:w-auto">
-                <Link href="/contact">
-                  Get a Quote <ArrowRight className="ml-2" />
-                </Link>
-              </Button>
+            <div className="p-6 bg-muted/50 rounded-lg">
+                <h3 className="font-bold text-lg mb-2">Interested in this product?</h3>
+                <p className="text-sm text-muted-foreground mb-4">Contact us on WhatsApp for a personalized quote and expert advice.</p>
+                <Button asChild size="lg" className="w-full bg-green-500 hover:bg-green-600 text-white">
+                  <a 
+                    href={`https://wa.me/+260974041745?text=Hello! I'm interested in the ${encodeURIComponent(product.name)}.`}
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                    Get a Quote on WhatsApp
+                  </a>
+                </Button>
             </div>
+
 
             <Accordion type="single" collapsible className="w-full" defaultValue="features">
               <AccordionItem value="features">
@@ -243,6 +249,25 @@ export default async function ProductDetailPage({ params }: { params: { slug: st
                   </AccordionTrigger>
                   <AccordionContent className="prose prose-sm max-w-none text-muted-foreground">
                     {product.longDescription}
+                  </AccordionContent>
+                </AccordionItem>
+              )}
+               {product.specifications && product.specifications.length > 0 && (
+                <AccordionItem value="specifications">
+                  <AccordionTrigger>
+                    <div className="flex items-center gap-2 font-semibold">
+                      <List className="h-5 w-5" /> Specifications
+                    </div>
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    <ul className="space-y-2">
+                      {product.specifications.map((spec, index) => (
+                        <li key={index} className="flex justify-between text-sm p-2 odd:bg-muted/50 rounded-md">
+                          <span className="text-muted-foreground">{spec.label.trim() === '' ? <span className="font-bold text-foreground">{spec.value}</span> : `${spec.label}:`}</span>
+                          {spec.label.trim() !== '' && <span className="font-medium text-right">{spec.value}</span>}
+                        </li>
+                      ))}
+                    </ul>
                   </AccordionContent>
                 </AccordionItem>
               )}

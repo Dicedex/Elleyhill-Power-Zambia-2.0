@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { useSearchParams } from 'next/navigation'
 import { PRODUCTS } from "@/data/products";
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
+import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { SiteLayout } from "@/components/layout";
 import { Button } from "@/components/ui/button";
@@ -18,7 +18,7 @@ const productCategories = ["All", ...Array.from(new Set(PRODUCTS.map((p) => p.ca
 
 const WhatsAppCTA = () => {
     const phoneNumber = "+260974041745";
-    const message = "Hello! I'm interested in one of your products and would like to get a quote.";
+    const message = "Hello! I'm interested in learning more about your products.";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
     return (
@@ -100,7 +100,7 @@ export default function ProductsPage() {
                         <CardTitle>{product.name}</CardTitle>
                     </CardHeader>
                     <CardContent className="flex-grow flex flex-col">
-                      <CardDescription className="flex-grow">{product.description}</CardDescription>
+                      <p className="text-muted-foreground flex-grow">{product.description}</p>
                     </CardContent>
                     <CardFooter className="flex items-center justify-end bg-muted/50 p-4 mt-auto">
                         <Button variant="ghost" className="text-primary group-hover:translate-x-1 transition-transform">
