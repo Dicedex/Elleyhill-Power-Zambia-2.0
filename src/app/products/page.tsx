@@ -92,7 +92,7 @@ function ProductsContent() {
                 <CardDescription className="flex-grow">{product.description}</CardDescription>
                 
               </CardContent>
-              <CardFooter className="flex items-center justify-between gap-2 bg-muted/50 p-2 mt-auto">
+              <CardFooter className="flex items-center justify-between gap-2 bg-muted/50 p-4 mt-auto">
                  <WhatsAppButton product={product} />
                   <Button variant="ghost" size="sm" asChild>
                      <Link href={`/products/${product.slug}`} className="text-primary group-hover:translate-x-1 transition-transform">
