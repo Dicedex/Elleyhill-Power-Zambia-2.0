@@ -34,7 +34,6 @@ import {
 import { type Product } from "@/data/products";
 import { PRODUCTS } from "@/data/products";
 
-
 // Appliance lists for different power stations
 const poweredAppliancesQ300 = [
   { icon: <Smartphone className="h-8 w-8 text-primary" />, name: "Phone Charger", power: "5W", duration: "25 Charges*" },
@@ -332,5 +331,5 @@ export function ProductDetailClient({ product }: { product: Product }) {
       </div>
       <WhatsAppCTA />
     </SiteLayout>
-
-    
+  );
+}
