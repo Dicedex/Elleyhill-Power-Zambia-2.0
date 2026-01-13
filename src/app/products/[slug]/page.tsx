@@ -2,11 +2,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { PRODUCTS, getProductBySlug, getProductCategories } from "@/data/products";
+import { PRODUCTS, getProductBySlug } from "@/data/products";
 import { SiteLayout } from "@/components/layout";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle, Package, ShieldCheck, FileText, ChevronRight, Home, ShoppingCart, MessageSquare } from "lucide-react";
+import { ArrowRight, CheckCircle, Package, ShieldCheck, FileText, ChevronRight, Home } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle, CardFooter, CardDescription } from "@/components/ui/card";
 import {
   Accordion,
@@ -175,9 +175,8 @@ export default async function ProductDetailPage({ params }: { params: { slug: st
     },
     aggregateRating: {
         "@type": "AggregateRating",
-        ratingValue: "4.8",
-        reviewCount: "52",
-        bestRating: "5"
+        "ratingValue": "4.8",
+        "reviewCount": "52"
     }
   };
 
