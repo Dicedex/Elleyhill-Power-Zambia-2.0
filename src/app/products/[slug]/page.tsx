@@ -6,7 +6,7 @@ import { PRODUCTS, getProductBySlug } from "@/data/products";
 import { SiteLayout } from "@/components/layout";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle, Package, ShieldCheck, FileText, ChevronRight, Home, List } from "lucide-react";
+import { ArrowRight, CheckCircle, Package, ShieldCheck, FileText, ChevronRight, Home, List, ShoppingCart } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
 import {
   Accordion,
@@ -108,9 +108,7 @@ const RelatedProducts = ({ currentProduct }: { currentProduct: any }) => {
                 <p className="text-muted-foreground">{product.description}</p>
               </CardContent>
               <CardFooter className="flex items-center justify-end bg-muted/50 p-4 mt-auto">
-                  <Button variant="ghost" className="text-primary group-hover:translate-x-1 transition-transform">
-                      View <ArrowRight className="ml-2"/>
-                  </Button>
+                    <WhatsAppButton product={product} />
               </CardFooter>
             </Card>
           </Link>
@@ -119,6 +117,28 @@ const RelatedProducts = ({ currentProduct }: { currentProduct: any }) => {
     </div>
   )
 }
+
+const WhatsAppButton = ({ product }: { product: any }) => {
+    const phoneNumber = "+260974041745";
+    const message = `Hello! I'm interested in the ${product.name} and would like to get a quote.`;
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+    return (
+        <a 
+            href={whatsappUrl} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="flex items-center gap-2"
+            onClick={(e) => e.stopPropagation()}
+        >
+            <Button variant="ghost" className="text-primary group-hover:translate-x-1 transition-transform">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                Get a Quote
+            </Button>
+        </a>
+    );
+};
+
 
 const WhatsAppCTA = () => {
     const phoneNumber = "+260974041745";
@@ -263,8 +283,13 @@ export default async function ProductDetailPage({ params }: { params: { slug: st
                     <ul className="space-y-2">
                       {product.specifications.map((spec, index) => (
                         <li key={index} className="flex justify-between text-sm p-2 odd:bg-muted/50 rounded-md">
-                          <span className="text-muted-foreground">{spec.label.trim() === '' ? <span className="font-bold text-foreground">{spec.value}</span> : `${spec.label}:`}</span>
-                          {spec.label.trim() !== '' && <span className="font-medium text-right">{spec.value}</span>}
+                          {spec.value.trim() === '' ? 
+                            <span className="font-bold text-foreground pt-2">{spec.label}</span> : 
+                            <>
+                              <span className="text-muted-foreground">{spec.label}:</span>
+                              <span className="font-medium text-right">{spec.value}</span>
+                            </>
+                          }
                         </li>
                       ))}
                     </ul>

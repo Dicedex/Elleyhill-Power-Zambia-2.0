@@ -34,6 +34,27 @@ const WhatsAppCTA = () => {
     )
 }
 
+const WhatsAppButton = ({ product }: { product: any }) => {
+    const phoneNumber = "+260974041745";
+    const message = `Hello! I'm interested in the ${product.name} and would like to get a quote.`;
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+    return (
+        <a 
+            href={whatsappUrl} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="flex items-center gap-2"
+            onClick={(e) => e.stopPropagation()}
+        >
+            <Button variant="ghost" className="text-primary group-hover:translate-x-1 transition-transform">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                Get a Quote
+            </Button>
+        </a>
+    );
+};
+
 export default function ProductsPage() {
   const searchParams = useSearchParams()
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -103,9 +124,7 @@ export default function ProductsPage() {
                       <p className="text-muted-foreground flex-grow">{product.description}</p>
                     </CardContent>
                     <CardFooter className="flex items-center justify-end bg-muted/50 p-4 mt-auto">
-                        <Button variant="ghost" className="text-primary group-hover:translate-x-1 transition-transform">
-                            View Details <ArrowRight className="ml-2"/>
-                        </Button>
+                        <WhatsAppButton product={product} />
                     </CardFooter>
                   </Card>
                 </Link>
