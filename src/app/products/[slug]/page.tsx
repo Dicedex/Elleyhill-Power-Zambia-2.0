@@ -21,7 +21,7 @@ export function generateStaticParams() {
   }));
 }
 
-export default function ProductDetailPage({ params }: { params: { slug: string } }) {
+export default async function ProductDetailPage({ params }: { params: { slug: string } }) {
   const product = PRODUCTS.find((p) => p.slug === params.slug);
 
   if (!product) {
