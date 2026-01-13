@@ -16,9 +16,9 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 const productCategories = ["All", ...Array.from(new Set(PRODUCTS.map((p) => p.category)))];
 
-const WhatsAppButton = () => {
+const WhatsAppButton = ({productName}: {productName: string}) => {
     const phoneNumber = "+260974041745";
-    const message = "Hello! I'm interested in one of your products and would like to get a quote.";
+    const message = `Hello! I'm interested in the ${productName} and would like to get a quote.`;
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
     return (
@@ -27,6 +27,7 @@ const WhatsAppButton = () => {
             target="_blank" 
             rel="noopener noreferrer"
             className="flex items-center gap-2"
+            onClick={(e) => e.stopPropagation()}
         >
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-green-500"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
             <span className="text-sm font-medium text-primary">Get a Quote</span>
@@ -103,7 +104,7 @@ export default function ProductsPage() {
                       <CardDescription className="flex-grow">{product.description}</CardDescription>
                     </CardContent>
                     <CardFooter className="flex items-center justify-between bg-muted/50 p-4 mt-auto">
-                        <WhatsAppButton />
+                        <WhatsAppButton productName={product.name} />
                         <Button variant="ghost" className="text-primary group-hover:translate-x-1 transition-transform">
                             View Details <ArrowRight className="ml-2"/>
                         </Button>

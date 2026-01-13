@@ -85,9 +85,9 @@ const RelatedProducts = ({ currentProduct }: { currentProduct: any }) => {
 
   if (related.length === 0) return null;
 
-  const WhatsAppButton = () => {
+  const WhatsAppButton = ({productName}: {productName: string}) => {
     const phoneNumber = "+260974041745";
-    const message = `Hello! I'm interested in the ${currentProduct.name} and would like to get a quote.`;
+    const message = `Hello! I'm interested in the ${productName} and would like to get a quote.`;
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
     return (
@@ -127,7 +127,7 @@ const RelatedProducts = ({ currentProduct }: { currentProduct: any }) => {
                 <CardDescription>{product.description}</CardDescription>
               </CardContent>
               <CardFooter className="flex items-center justify-between bg-muted/50 p-4 mt-auto">
-                  <WhatsAppButton />
+                  <WhatsAppButton productName={product.name} />
                   <Button variant="ghost" className="text-primary group-hover:translate-x-1 transition-transform">
                       View <ArrowRight className="ml-2"/>
                   </Button>
