@@ -87,7 +87,6 @@ function ProductsContent() {
               </CardHeader>
               <CardContent className="flex-grow flex flex-col">
                 <CardDescription className="flex-grow">{product.description}</CardDescription>
-                {product.price && <p className="text-xl md:text-2xl font-bold text-primary mt-4">{product.price}</p>}
               </CardContent>
               <CardFooter className="flex items-center justify-between gap-2 bg-muted/50 p-2 mt-auto">
                  <WhatsAppButton product={product} />
