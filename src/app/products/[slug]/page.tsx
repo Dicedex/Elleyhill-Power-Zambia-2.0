@@ -7,7 +7,7 @@ import { SiteLayout } from "@/components/layout";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle, Package, ShieldCheck, FileText, ChevronRight, Home, ShoppingCart, MessageSquare } from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardFooter, CardDescription } from "@/components/ui/card";
 import {
   Accordion,
   AccordionContent,
@@ -42,7 +42,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
           alt: product.name,
         },
       ],
-      type: 'product',
+      type: 'website',
       siteName: 'Elleyhill Power Zambia',
     },
     twitter: {
@@ -176,7 +176,8 @@ export default async function ProductDetailPage({ params }: { params: { slug: st
     aggregateRating: {
         "@type": "AggregateRating",
         ratingValue: "4.8",
-        "reviewCount": "52"
+        reviewCount: "52",
+        bestRating: "5"
     }
   };
 
@@ -285,5 +286,3 @@ export default async function ProductDetailPage({ params }: { params: { slug: st
     </SiteLayout>
   );
 }
-
-
