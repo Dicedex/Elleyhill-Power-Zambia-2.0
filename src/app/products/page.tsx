@@ -122,7 +122,7 @@ export default function ProductsPage() {
                     <CardContent className="flex-grow flex flex-col">
                       <p className="text-muted-foreground flex-grow">{product.description}</p>
                     </CardContent>
-                    <CardFooter className="flex items-center bg-muted/50 p-4 mt-auto">
+                    <CardFooter className="bg-muted/50 p-4 mt-auto">
                         <WhatsAppButton product={product} />
                     </CardFooter>
                   </Card>
@@ -159,5 +159,6 @@ function ProductsSkeleton() {
     );
 }
 
+    
     
     

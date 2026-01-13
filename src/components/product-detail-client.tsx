@@ -64,7 +64,7 @@ const RelatedProducts = ({ currentProduct }: { currentProduct: any }) => {
               <CardContent className="flex-grow">
                 <p className="text-muted-foreground">{product.description}</p>
               </CardContent>
-              <CardFooter className="flex items-center bg-muted/50 p-4 mt-auto">
+              <CardFooter className="bg-muted/50 p-4 mt-auto">
                     <WhatsAppButton product={product} />
               </CardFooter>
             </Card>
@@ -246,4 +246,6 @@ export function ProductDetailClient({ product }: { product: Product }) {
 }
 
     
+    
+
     
