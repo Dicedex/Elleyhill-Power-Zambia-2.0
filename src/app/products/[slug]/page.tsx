@@ -16,52 +16,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import type { Metadata } from 'next';
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const product = getProductBySlug(params.slug);
-
-  if (!product) {
-    return {
-      title: "Product Not Found",
-    };
-  }
-
-  const fullImageUrl = `https://www.elleyhillzm.com${product.image}`;
-
-  return {
-    title: `${product.name} | Elleyhill Power Zambia`,
-    description: product.description,
-    keywords: [product.name, product.category, 'Elleyhill Power', 'solar Zambia'],
-    openGraph: {
-      title: product.name,
-      description: product.description,
-      images: [
-        {
-          url: fullImageUrl,
-          width: 800,
-          height: 600,
-          alt: product.name,
-        },
-      ],
-      type: 'website',
-      siteName: 'Elleyhill Power Zambia',
-    },
-    twitter: {
-        card: 'summary_large_image',
-        title: product.name,
-        description: product.description,
-        images: [fullImageUrl],
-    }
-  };
-}
-
-
-export function generateStaticParams() {
-  return PRODUCTS.map((product) => ({
-    slug: product.slug,
-  }));
-}
 
 const Breadcrumbs = ({ product }: { product: any }) => (
   <nav className="flex items-center text-sm text-muted-foreground mb-4">
@@ -160,7 +115,7 @@ const WhatsAppCTA = () => {
     )
 }
 
-export default async function ProductDetailPage({ params }: { params: { slug: string } }) {
+export default function ProductDetailPage({ params }: { params: { slug: string } }) {
   const product = getProductBySlug(params.slug);
 
   if (!product) {
