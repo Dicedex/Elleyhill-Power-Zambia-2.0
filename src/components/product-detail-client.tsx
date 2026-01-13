@@ -64,7 +64,7 @@ const RelatedProducts = ({ currentProduct }: { currentProduct: any }) => {
               <CardContent className="flex-grow">
                 <p className="text-muted-foreground">{product.description}</p>
               </CardContent>
-              <CardFooter className="flex items-center justify-end bg-muted/50 p-4 mt-auto">
+              <CardFooter className="flex items-center bg-muted/50 p-4 mt-auto">
                     <WhatsAppButton product={product} />
               </CardFooter>
             </Card>
@@ -76,21 +76,22 @@ const RelatedProducts = ({ currentProduct }: { currentProduct: any }) => {
 }
 
 function WhatsAppButton({ product }: { product: any }) {
+    "use client";
     const phoneNumber = "+260974041745";
     const message = `Hello! I'm interested in the ${product.name} and would like to get a quote.`;
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
     return (
-        <Button asChild variant="ghost" className="text-primary group-hover:translate-x-1 transition-transform" onClick={(e) => e.stopPropagation()}>
-            <a 
-                href={whatsappUrl} 
-                target="_blank" 
-                rel="noopener noreferrer"
-            >
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
-                Get a Quote
-            </a>
-        </Button>
+        <a 
+            href={whatsappUrl} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            onClick={(e) => e.stopPropagation()}
+            className="flex items-center justify-between w-full text-primary hover:text-primary/80 transition-colors"
+        >
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+            <span className="font-medium text-sm">Get a Quote</span>
+        </a>
     );
 };
 
