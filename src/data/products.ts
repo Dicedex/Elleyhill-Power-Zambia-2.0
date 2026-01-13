@@ -411,7 +411,8 @@ export type Product = {
             "Lightweight & Compact Design",
             "Informative LCD Display",
             "Built-in Safety Protections",
-            "Not suitable for heating appliances"
+            "Not suitable for heating appliances (kettles, stoves, etc.)",
+            "*Runtimes are estimates and may vary based on device consumption."
         ],
         specifications: [
             { label: "GENERAL", value: "" },
@@ -448,7 +449,8 @@ export type Product = {
         "Fast Solar Charging (200W Max)",
         "Clear LCD Display",
         "Portable and Durable Design",
-        "Not suitable for heating appliances"
+        "Not suitable for heating appliances (kettles, stoves, etc.)",
+        "*Runtimes are estimates and may vary based on device consumption."
       ],
       specifications: [
         { label: "GENERAL", value: "" },
@@ -476,7 +478,13 @@ export type Product = {
         category: "Portable",
         description: "High-capacity power station to run demanding appliances and tools off-grid.",
         price: "K 16,000.00",
-        features: ["2400W High Power Output", "Large Battery Capacity", "UPS Functionality", "Pure Sine Wave"],
+        features: [
+            "2400W High Power Output", 
+            "Large Battery Capacity", 
+            "UPS Functionality", 
+            "Pure Sine Wave",
+            "*Runtimes are estimates and may vary based on device consumption."
+        ],
         specifications: [
             { label: "Rated Capacity", value: "1743wH - (Samsung Lithium Battery)" },
             { label: "Inverter", value: "Pure sine wave" },
@@ -510,7 +518,8 @@ export type Product = {
         "Overcharge and discharge protection for longer battery life",
         "Safe and reliable with intelligent exhaust fan control",
         "Overall automatic protection and alarms (AC overload, short circuit, etc.)",
-        "Not suitable for heating appliances"
+        "Not suitable for heating appliances",
+        "*Runtimes are estimates and may vary based on device consumption."
       ],
       specifications: [
         { label: "BATTERY", value: "" },
@@ -546,7 +555,14 @@ export type Product = {
       category: "Portable",
       description: "An affordable 1000W portable power station with a durable Gel battery.",
       price: "K 7,500.00",
-      features: ["1000W Inverter", "Deep Cycle Gel Battery", "Multiple Outputs", "Cost-Effective", "Not suitable for heating appliances"],
+      features: [
+        "1000W Inverter", 
+        "Deep Cycle Gel Battery", 
+        "Multiple Outputs", 
+        "Cost-Effective", 
+        "Not suitable for heating appliances",
+        "*Runtimes are estimates and may vary based on device consumption."
+      ],
       specifications: [
         { label: "INVERTER", value: "" },
         { label: "Rated Power", value: "1000W" },
