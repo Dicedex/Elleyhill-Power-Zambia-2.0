@@ -1,3 +1,4 @@
+'use client';
 
 import Image from "next/image";
 import Link from "next/link";
@@ -203,13 +204,3 @@ export function SiteLayout({ children }: { children: React.ReactNode }) {
         </div>
     );
 }
-
-    
-
-    
-
-    
-
-    
-
-    

@@ -70,9 +70,8 @@ export default function ProductsPage() {
                       <Image
                         src={product.image}
                         alt={product.name}
-                        width={600}
-                        height={400}
-                        className="object-contain w-full h-full"
+                        fill
+                        className="object-contain w-full h-full p-4"
                         data-ai-hint={product.aiHint}
                       />
                       <div className="absolute top-2 right-2">
