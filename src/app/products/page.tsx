@@ -34,7 +34,7 @@ const WhatsAppCTA = () => {
     )
 }
 
-const WhatsAppButton = ({ product }: { product: any }) => {
+function WhatsAppButton({ product }: { product: any }) {
     const phoneNumber = "+260974041745";
     const message = `Hello! I'm interested in the ${product.name} and would like to get a quote.`;
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;

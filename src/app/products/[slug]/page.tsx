@@ -1,4 +1,6 @@
 
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -6,7 +8,7 @@ import { PRODUCTS, getProductBySlug } from "@/data/products";
 import { SiteLayout } from "@/components/layout";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle, Package, ShieldCheck, FileText, ChevronRight, Home, List, ShoppingCart } from "lucide-react";
+import { ArrowRight, CheckCircle, Package, ShieldCheck, FileText, ChevronRight, Home, List } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle, CardFooter, CardDescription } from "@/components/ui/card";
 import {
   Accordion,
@@ -105,7 +107,7 @@ const RelatedProducts = ({ currentProduct }: { currentProduct: any }) => {
                   <CardTitle>{product.name}</CardTitle>
               </CardHeader>
               <CardContent className="flex-grow">
-                <p className="text-muted-foreground">{product.description}</p>
+                <CardDescription>{product.description}</CardDescription>
               </CardContent>
               <CardFooter className="flex items-center justify-end bg-muted/50 p-4 mt-auto">
                     <WhatsAppButton product={product} />
@@ -118,7 +120,7 @@ const RelatedProducts = ({ currentProduct }: { currentProduct: any }) => {
   )
 }
 
-const WhatsAppButton = ({ product }: { product: any }) => {
+function WhatsAppButton({ product }: { product: any }) {
     const phoneNumber = "+260974041745";
     const message = `Hello! I'm interested in the ${product.name} and would like to get a quote.`;
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
